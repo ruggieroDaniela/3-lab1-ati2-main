@@ -14,13 +14,6 @@ docker-compose -f local.yml pull postgres
 DOCKER_BUILDKIT=1 docker-compose -f local.yml build django
 ```
 
-Si estas utilizando Linux poner esto en tu `.bashrc` o `.zhsrc`, se necesita para los permisos de archivos
-
-```bash
-export UID=$(id -u)
-export GID=$(id -g)
-```
-
 Activar servicio de base de datos
 ```bash
 docker-compose -f local.yml up -d postgres
