@@ -1,7 +1,7 @@
 from django.http.response import Http404
 from django.urls.base import reverse_lazy
 
-from django.views.generic import UpdateView, CreateView, ListView, DeleteView, DetailView, TemplateView
+from django.views.generic import UpdateView, CreateView, ListView, DeleteView, DetailView
 from .forms import CreateBusinessForm, CreateEmployeeForm, SocialMediaFormset
 from lab_ati.empresa.models import Empleado, Empresa, SocialMedia
 from django.urls import reverse
@@ -11,25 +11,25 @@ from django.shortcuts import render
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
 
-# Create your views here.
+# Businesses Views
 class BusinessListView(ListView):
-
     template_name = "pages/business/list.html"
     model = Empresa
     paginate_by = 10
-
 
     def get_queryset(self):
         queryset = Empresa.objects.all()
         return queryset
 
-class DeleteBusinessView(DeleteView):
-    template_name = "pages/business/delete.html"
+class BusinessDetailsView(DetailView):
+    template_name = "pages/business/detail.html"
     model = Empresa
 
-    def get_success_url(self):
-        return reverse('empresa:business-list')
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["business_id"] = self.object.id
+        return context
+    
 class CreateBusinessView(CreateView):
     template_name = "pages/business/create.html"
     model = Empresa
@@ -72,6 +72,7 @@ class CreateBusinessView(CreateView):
         # Queryset vacio porque vamos a crear una empresa nuevo
         context = super().get_context_data(**kwargs)
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
+        context["list_link"] = "/business"
         return context
 
 class EditBusinessView(UpdateView):
@@ -131,17 +132,44 @@ class EditBusinessView(UpdateView):
         )
         context["editing_social"] = True
         context["business_id"] = self.object.id
+        context["list_link"] = "/business"
         return context
 
-
-class BusinessDetailsView(DetailView):
-    template_name = "pages/business/detail.html"
+class DeleteBusinessView(DeleteView):
+    template_name = "pages/business/delete.html"
     model = Empresa
+
+    def get_success_url(self):
+        return reverse('empresa:business-list')
+    
+
+#Employees Views
+class ListEmployeeView(ListView):
+    template_name = "pages/employees/list.html"
+    model = Empleado
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["business_id"] = self.object.id
+        context['business_id'] = self.kwargs['business_id']
         return context
+
+    def get_queryset(self):
+        queryset = Empleado.objects.filter(empresa = self.kwargs['business_id'])
+        return queryset
+
+class DetailEmployeeView(DetailView):
+    template_name = "pages/employees/detail.html"
+    model = Empleado
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['business_id'] = self.kwargs['business_id']
+
+        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
+        context["back_link"] = context["list_link"]
+        return context
+    
 class CreateEmployeeView(CreateView):
     template_name = "pages/employees/create.html"
     model = Empleado
@@ -208,7 +236,6 @@ class CreateEmployeeView(CreateView):
         # Queryset vacio porque vamos a crear un empleado nuevo
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
         return context
-
 
 class EditEmployeeView(UpdateView):
     template_name = "pages/employees/create.html"
@@ -278,21 +305,6 @@ class EditEmployeeView(UpdateView):
 
         return context
 
-class ListEmployeeView(ListView):
-    template_name = "pages/employees/list.html"
-    model = Empleado
-    paginate_by = 10
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['business_id'] = self.kwargs['business_id']
-        return context
-
-    def get_queryset(self):
-        queryset = Empleado.objects.filter(empresa = self.kwargs['business_id'])
-        return queryset
-
-
 class DeleteEmployeeView(DeleteView):
     template_name = "pages/employees/delete.html"
     model = Empleado
@@ -307,17 +319,3 @@ class DeleteEmployeeView(DeleteView):
 
     def get_success_url(self):
         return reverse('empresa:list-employee', kwargs={ 'business_id': self.kwargs['business_id']})
-
-class DetailEmployeeView(DetailView):
-    template_name = "pages/employees/detail.html"
-    model = Empleado
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['business_id'] = self.kwargs['business_id']
-
-        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
-        context["back_link"] = context["list_link"]
-        return context
-
-

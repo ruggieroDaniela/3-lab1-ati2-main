@@ -6,9 +6,8 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core import validators
 
-# Create your models here.
+# Abstract Classes
 class DirABC(models.Model):
-
     ciudad = models.TextField(_("Ciudad"))
     pais = models.TextField(_("Pais"))
     redes_sociales = GenericRelation(
@@ -29,17 +28,19 @@ class EmpresaABC(DirABC):
     web_site = models.URLField(_("Sitio web"))
     servicio_proporciona = models.TextField(_("Servicio que proporciona"))
 
-    def __str__(self):
-        return f"{self.nombre} {self.id_tributaria}"
-
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return f"{self.nombre} {self.id_tributaria}"
+
+# Normal Classes
 class Empresa(EmpresaABC):
     tlf_regex = '^\+?([0-9]{1,3}|[1]\-?[0-9]{3})?\-?([0-9]{1,4})\-?([0-9]{3}\-?[0-9]{2}\-?[0-9]{2})$'
 
     servicio_ofrecido = models.TextField(_("Servicio que le ofrecimos"))
     servicio_proporciona = models.TextField(_("Servicio que proporciona"))
+
     whatsapp=models.TextField(
         _("Whatsapp"),
         validators=[validators.RegexValidator(
@@ -48,15 +49,19 @@ class Empresa(EmpresaABC):
             code='tlf_whatsapp_invalido'
         )]
     )
-    telefono=models.TextField(_("Teléfono"),
+
+    telefono=models.TextField(
+        _("Teléfono"),
         validators=[validators.RegexValidator(
             regex=tlf_regex,
             message=_('El campo debe ser un número de teléfono'),
             code='tlf_invalido'
         )]
     )
+
     curso_interes=models.TextField(_("Curso de interés"))
     frecuencia=models.TextField(_("Frecuencia con la que desea mantenerse informado"))
+
     cliente_empresa = models.ForeignKey(
         to='self',
         null=True,
@@ -78,14 +83,12 @@ class SocialMedia(models.Model):
     content_object = GenericForeignKey('content_type', 'object_id')
 
     class Meta:
-        indexes = [
-            models.Index(fields=["content_type", "object_id"]),
-        ]
+        indexes = [models.Index(fields=["content_type", "object_id"])]
+
     def __str__(self):
         return f"{self.nombre} {self.valor}"
 
 class Empleado(DirABC):
-
     tlf_regex = '^\+?([0-9]{1,3}|[1]\-?[0-9]{3})?\-?([0-9]{1,4})\-?([0-9]{3}\-?[0-9]{2}\-?[0-9]{2})$'
     ci_regex = '^(([A-Z]-)[0-9]{1,3}\.?[0-9]{1,3}\.?[0-9]{1,3})$|^([0-9A-Z]{10})$'
 
@@ -95,12 +98,17 @@ class Empleado(DirABC):
 
     nombre = models.TextField(_("Nombre"))
     apellido = models.TextField(_("Apellido"))
-    ci = models.TextField(_("Cédula o nro pasaporte"), validators=[validators.RegexValidator(
-                                    regex=ci_regex,
-                                    message=_('El campo debe ser una cédula de identidad o número de pasaporte'),
-                                    code='ci_invalido'
-                                )
-                            ])
+    ci = models.TextField(
+        _("Cédula o nro pasaporte"), 
+        validators=[
+            validators.RegexValidator(
+                regex=ci_regex,
+                message=_('El campo debe ser una cédula de identidad o número de pasaporte'),
+                code='ci_invalido'
+            )
+        ]
+    )
+
     cargo=models.TextField(_("Cargo"))
 
     empresa=models.ForeignKey(
@@ -111,27 +119,36 @@ class Empleado(DirABC):
         null=True,
         blank=False,
     )
+
     modalidad_contratacion=models.TextField(
         verbose_name=_("Modalidad de contratación"),
         choices=Modalidad.choices
     )
+
     email_emp = models.EmailField(_("Correo electrónico de la empresa"))
     email_p = models.EmailField(_("Correo personal"))
+
     tlf_celular=models.TextField(
         _("Teléfono celular"),
-        validators=[validators.RegexValidator(
-                                    regex=tlf_regex,
-                                    message=_('El campo debe ser un número de teléfono'),
-                                    code='tlf_celular_invalido'
-                                )
-                            ])                             
-    tlf_local=models.TextField(_("Teléfono local"), validators=[validators.RegexValidator(
-                                    regex=tlf_regex,
-                                    message=_('El campo debe ser un número de teléfono'),
-                                    code='tlf_local_invalido'
-                                )
-                            ])
+        validators=[
+            validators.RegexValidator(
+                regex=tlf_regex,
+                message=_('El campo debe ser un número de teléfono'),
+                code='tlf_celular_invalido'
+            )
+        ]
+    ) 
+                                
+    tlf_local=models.TextField(
+        _("Teléfono local"), 
+        validators=[
+            validators.RegexValidator(
+                regex=tlf_regex,
+                message=_('El campo debe ser un número de teléfono'),
+                code='tlf_local_invalido'
+            )
+        ]
+    )
 
     def __str__(self):
         return f"{self.nombre} {self.ci} {self.email_p}"
-
