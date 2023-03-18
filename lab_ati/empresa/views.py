@@ -69,10 +69,15 @@ class CreateBusinessView(CreateView):
         )
 
     def get_context_data(self, **kwargs):
-        # Queryset vacio porque vamos a crear una empresa nuevo
         context = super().get_context_data(**kwargs)
-        context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
+
+        #Header
         context["list_link"] = "/business"
+        context["back_link"] = context["list_link"]
+
+        # Queryset vacio porque vamos a crear una empresa nuevo
+        context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
+        
         return context
 
 class EditBusinessView(UpdateView):
@@ -127,12 +132,17 @@ class EditBusinessView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context["socialm_formset"] = SocialMediaFormset(
             queryset=self.object.redes_sociales.all()
         )
         context["editing_social"] = True
         context["business_id"] = self.object.id
+
+        #Header
         context["list_link"] = "/business"
+        context["back_link"] = context["list_link"]
+        
         return context
 
 class DeleteBusinessView(DeleteView):
@@ -229,6 +239,7 @@ class CreateEmployeeView(CreateView):
         context['business_id'] = self.kwargs['business_id']
         context["empresa"] = self.get_empresa()
         context["business_id"] = context["empresa"].id
+
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
         context["back_link"] = context["list_link"]
