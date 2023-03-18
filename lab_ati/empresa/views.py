@@ -17,10 +17,6 @@ class BusinessListView(ListView):
     model = Empresa
     paginate_by = 10
 
-    def get_queryset(self):
-        queryset = Empresa.objects.all()
-        return queryset
-
 class BusinessDetailsView(DetailView):
     template_name = "pages/business/detail.html"
     model = Empresa
@@ -266,13 +262,13 @@ class EditEmployeeView(UpdateView):
         return empresa
 
     def post(self, request, *args, **kwargs):
-
         self.object = self.get_object()
         self.empresa = self.get_empresa()
         self.social_media_formset = SocialMediaFormset(
             data=self.request.POST,
             queryset=self.object.redes_sociales.all()
         )
+
         return super().post(request, *args, **kwargs)
 
     def form_valid(self, form):
