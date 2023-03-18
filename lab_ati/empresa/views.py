@@ -28,6 +28,11 @@ class BusinessDetailsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["business_id"] = self.object.id
+
+        #Header
+        context["list_link"] = "/business"
+        context["back_link"] = context["list_link"]
+        
         return context
     
 class CreateBusinessView(CreateView):
@@ -142,7 +147,7 @@ class EditBusinessView(UpdateView):
         #Header
         context["list_link"] = "/business"
         context["back_link"] = context["list_link"]
-        
+
         return context
 
 class DeleteBusinessView(DeleteView):
@@ -264,7 +269,6 @@ class EditEmployeeView(UpdateView):
         )
 
     def get_empresa(self):
-
         # Validate that Empresa exists
         try:
             empresa = Empresa.objects.get(id=self.kwargs.get("business_id"))
