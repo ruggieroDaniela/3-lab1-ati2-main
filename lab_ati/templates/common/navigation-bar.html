@@ -1,7 +1,7 @@
 {% load i18n %}
 {% block navigation_bar %}
 <section class="d-flex mb-4">
-    <a class="link-primary d-flex mx-1" href="{{ back_link }}">
+    <a class="link-primary d-flex mx-1" onClick="javascript:history.go(-1);" style="cursor: pointer">
         <i class="bi bi-arrow-left mx-1"></i>
         {% trans "Atrás" %}
     </a>

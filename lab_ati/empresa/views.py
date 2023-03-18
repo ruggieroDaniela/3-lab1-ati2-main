@@ -28,11 +28,7 @@ class BusinessDetailsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["business_id"] = self.object.id
-
-        #Header
         context["list_link"] = "/business"
-        context["back_link"] = context["list_link"]
-        
         return context
     
 class CreateBusinessView(CreateView):
@@ -78,11 +74,9 @@ class CreateBusinessView(CreateView):
 
         #Header
         context["list_link"] = "/business"
-        context["back_link"] = context["list_link"]
 
         # Queryset vacio porque vamos a crear una empresa nuevo
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
-        
         return context
 
 class EditBusinessView(UpdateView):
@@ -146,8 +140,6 @@ class EditBusinessView(UpdateView):
 
         #Header
         context["list_link"] = "/business"
-        context["back_link"] = context["list_link"]
-
         return context
 
 class DeleteBusinessView(DeleteView):
@@ -182,7 +174,6 @@ class DetailEmployeeView(DetailView):
         context['business_id'] = self.kwargs['business_id']
 
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
-        context["back_link"] = context["list_link"]
         return context
     
 class CreateEmployeeView(CreateView):
@@ -198,14 +189,13 @@ class CreateEmployeeView(CreateView):
                 "pk": self.object.pk,
             },
         )
+    
     def get_empresa(self):
-
         # Validate that Empresa exists
         try:
             empresa = Empresa.objects.get(id=self.kwargs.get("business_id"))
         except (Empresa.DoesNotExist, exceptions.ValidationError):
             raise Http404(_("La empresa no existe"))
-
         return empresa
 
     def post(self, request, *args, **kwargs):
@@ -247,7 +237,6 @@ class CreateEmployeeView(CreateView):
 
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
-        context["back_link"] = context["list_link"]
 
         # Queryset vacio porque vamos a crear un empleado nuevo
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
@@ -274,7 +263,6 @@ class EditEmployeeView(UpdateView):
             empresa = Empresa.objects.get(id=self.kwargs.get("business_id"))
         except (Empresa.DoesNotExist, exceptions.ValidationError):
             raise Http404(_("La empresa no existe"))
-
         return empresa
 
     def post(self, request, *args, **kwargs):
@@ -316,8 +304,6 @@ class EditEmployeeView(UpdateView):
         context["editing_social"] = True
 
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
-        context["back_link"] = context["list_link"]
-
         return context
 
 class DeleteEmployeeView(DeleteView):
@@ -329,7 +315,6 @@ class DeleteEmployeeView(DeleteView):
         context['business_id'] = self.kwargs['business_id']
 
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
-        context["back_link"] = context["list_link"]
         return context
 
     def get_success_url(self):
