@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Proveedor
 from .forms import ProveedorForm
 #from ..empresa.models import Empresa, SocialMedia 
@@ -170,11 +171,10 @@ def deleteProveedor(request):
     return render(request,'pages/404.html')
 
   # get supplier 
-  proveedor = Proveedor.objects.get(id=proveedorId)
-
-  # Error 
-  if(proveedor == None):
-    return render(request,'pages/404.html')
+  try:
+    proveedor = Proveedor.objects.get(id=proveedorId)
+  except ObjectDoesNotExist:
+    return render(request,'404.html')
 
   proveedor.delete()                                  # delete 
   empresaId = str(proveedor.empresa.id)
