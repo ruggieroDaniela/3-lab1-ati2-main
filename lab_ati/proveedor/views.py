@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 from .models import Proveedor
 from .forms import ProveedorForm
 #from ..empresa.models import Empresa, SocialMedia 
@@ -97,6 +98,9 @@ def updateProveedor(request):
         queryset=proveedor.redes_representante.all(),
     )
 
+    if formularioProveedor.is_valid():
+      messages.success(request, "Su cambio se ha guardado con éxito")
+
     context = {
       "business_id": proveedor.empresa.id,
       "data":{
@@ -110,6 +114,8 @@ def updateProveedor(request):
       "editing_social":True,
       "list_link":'/proveedor?empresa='+str(proveedor.empresa.id)
     }
+    
+
     return render(request,'pages/proveedor/create-update.html',context)
   elif request.method == 'POST':
     proveedorId = request.GET.get('proveedor')
@@ -125,6 +131,7 @@ def updateProveedor(request):
     empresaId = str(oldProveedor.empresa.id)
     if formularioProveedor.is_valid():
       print('is valid!')
+      messages.success(request, "Su cambio se ha guardado con éxito")
       proveedorSaved = formularioProveedor.save()
       social_media_formset = SocialMediaFormset(
         prefix="proveedorSocial",

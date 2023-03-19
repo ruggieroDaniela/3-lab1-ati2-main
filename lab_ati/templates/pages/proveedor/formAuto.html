@@ -1,5 +1,6 @@
 {% load i18n %}
 {% if data.update == True %}
+
 <form
   class="container d-grid gap-3 pb-4"
   enctype="multipart/form-data"
@@ -7,6 +8,7 @@
   method="post"
 >
 {% else %}
+
 <form
   class="container d-grid gap-3 pb-4"
   enctype="multipart/form-data"
@@ -84,4 +86,6 @@
   <div class="d-grid gap-2 col-6 mx-auto form-button-box">
     <button id="save_supplier" class="btn btn-primary" type="submit">{% trans "Guardar" %}</button>
   </div>
+
+  
 </form>

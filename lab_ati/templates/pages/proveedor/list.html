@@ -5,6 +5,7 @@
 <section class="general-container ">
   <h2 class="text-center pb-4">{% trans 'Lista de proveedores de' %} {{empresa.empresa.nombre}}</h2>
   <section class="container d-grid gap-3 pb-4">
+    {% include 'common/messages.html' %}
     <section class="row">
       {% if tieneProveedores %}
       <section class="d-flex justify-content-between mb-2">
