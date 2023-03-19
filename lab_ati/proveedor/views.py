@@ -142,12 +142,12 @@ def listProveedor(request):
   empresaId = request.GET.get('empresa')
   print(empresaId)
   if(empresaId == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
 
   empresa = findEmpresa(empresaId)
   print(empresa)
   if(empresa == None): #empresa no existe
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
 
   proveedoresList = Proveedor.objects.filter(empresa__id__contains=empresaId)
   print(proveedoresList)
@@ -168,7 +168,7 @@ def deleteProveedor(request):
 
   # Error 
   if(proveedorId == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
 
   # get supplier 
   try:
@@ -183,10 +183,10 @@ def deleteProveedor(request):
 def seeProveedor(request):
   proveedorId = request.GET.get('proveedor') 
   if(proveedorId == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
   proveedor = Proveedor.objects.get(id=proveedorId)
   if(proveedor == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
   socialMediaForm  = SocialMediaFormset(
     prefix="proveedorSocial",
     queryset=proveedor.redes_proveedor.all()
