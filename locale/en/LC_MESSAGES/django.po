@@ -674,14 +674,10 @@ msgid "Lista de clientes"
 msgstr "Client list"
 
 #: lab_ati/templates/pages/clientes/index.html:8
-#, fuzzy
-#| msgid "Gestiona empresas"
 msgid "Gestiona clientes"
 msgstr "Manage businesses"
 
 #: lab_ati/templates/pages/clientes/index.html:19
-#, fuzzy
-#| msgid "Nombre y Apellido"
 msgid "Nombre completo"
 msgstr "Full Name"
 
