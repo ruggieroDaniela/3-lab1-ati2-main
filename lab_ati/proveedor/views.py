@@ -160,15 +160,23 @@ def listProveedor(request):
   context["empresa"] = {"empresa":empresa, "id":empresaId}
   context["business_id"] = empresaId
   return render(request,'pages/proveedor/list.html',context)
-  
+
+# Delete Supplier 
 def deleteProveedor(request):
-  proveedorId = request.GET.get('proveedor') 
+  proveedorId = request.GET.get('proveedor')          # get supplier id 
+
+  # Error 
   if(proveedorId == None):
     return render(request,'pages/404.html')
+
+  # get supplier 
   proveedor = Proveedor.objects.get(id=proveedorId)
+
+  # Error 
   if(proveedor == None):
     return render(request,'pages/404.html')
-  proveedor.delete()
+
+  proveedor.delete()                                  # delete 
   empresaId = str(proveedor.empresa.id)
   return redirect('/proveedor?empresa='+empresaId)
 
