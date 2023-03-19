@@ -3,12 +3,33 @@
     {% csrf_token %}
     <div class="row">
         {% for field in form %}
-            {% if field.name == 'empresa' %}
-            <div style="display: none;" class="col-0">
-            {% else %}
-            <div class="col-6" style="margin-bottom: 15px;">
-            {% endif %}
-                <div class="col input-group">
+
+        {% if field.name == 'empresa' %}
+        <div style="display: none;" class="col-0">
+        {% else %}
+        <div class="col-6" style="margin-bottom: 15px;">
+        {% endif %}
+            <div class="col input-group">
+
+                {% if field.name == 'personal_email' %}
+                    
+                    <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ field.label }}</label>
+                    <input 
+                        type="{{ field.widget.input_type }}"
+                        class="form-control" 
+                        name="{{ field.name }}"
+                        aria-describedby="helpId" 
+                        placeholder="{{ field.label }}"
+                        value="{{ field.value | default:'' }}"
+                        pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                        Required
+                    >
+                    {% for error in form.email.errors %}
+                        <span class="invalid-feedback">{{ error }}</span>
+                    {% endfor %}
+                    
+                {% else %}
+
 
                     {% if field.name == 'tipo' %}
                         <label class="input-group-text">{% trans "Tipo" %}</label>
@@ -30,7 +51,7 @@
                             </option>
                         </select>
                     {% else %}
-                        <label class="input-group-text">{{ field.label }}</label>
+                        <label class="input-group-text" name={{field.name}}>{{ field.label }}</label>
                         <input 
                             type="{{ field.widget.input_type }}"
                             class="form-control" 
@@ -45,10 +66,13 @@
                             Required
                         >
                     {% endif %}
-                    <span class="text-danger text-xs mx-2">
-                        {{ field.errors }}
-                    </span>
-                </div>
+                {% endif %}
+                <span class="text-danger text-xs mx-2">
+                    {{ field.errors }}
+                </span>
+            </div>
+
+            
             </div>
         {% endfor %}
     </div>
