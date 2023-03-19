@@ -28,8 +28,10 @@ TIME_ZONE = "America/Caracas"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "es"
 LANGUAGES = [
-    ('es', _('Spanish')),
-    ('en', _('English')),
+    ('es', _('Español')),
+    ('en', _('Ingles')),
+    ('fr', _('Francés')),
+    ('de', _('Aleman')),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
