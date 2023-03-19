@@ -15,15 +15,21 @@ def get_item(objectList, key):
     return ""
   return getattr(objectList,key)
 
+# Create Supplier 
 def createProveedor(request):
+
   if request.method == 'GET': 
-    empresaId = request.GET.get('empresa') 
+    empresaId = request.GET.get('empresa')                  # get id 
+
     if(empresaId == None):
       return render(request,'404.html')
-    empresa = Empresa.objects.get(id=empresaId)
-    if(empresa == None):
+
+    
+    try:
+      empresa = Empresa.objects.get(id=empresaId)
+    except ObjectDoesNotExist:
       return render(request,'404.html')
-    #print(empresa)
+    
     formularioProveedor = ProveedorForm(request.GET)
     context = {}
     proveedorSocialMedia = SocialMediaFormset(
@@ -69,17 +75,18 @@ def createProveedor(request):
       add_social_media(proveedorSaved, redes_representante_formset, belongs_to="redes_representante")
       return redirect('/proveedor?empresa='+empresaId)
     return redirect('/proveedor/crear?empresa='+empresaId)
-    
+
+# Update Supplier 
 def updateProveedor(request):
   if request.method == 'GET':
     proveedorId = request.GET.get('proveedor')
-    print('proveedor id: ', proveedorId)
+    
     if(proveedorId == None):
       return render(request,'404.html')
     proveedor = Proveedor.objects.get(id=proveedorId)
     if(proveedor == None):
       return render(request,'404.html') 
-    print(proveedor)
+    
     formularioProveedor = ProveedorForm(request.POST or request.GET)
     socialMediaForm  = SocialMediaFormset(
         prefix="proveedorSocial",
