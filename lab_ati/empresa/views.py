@@ -33,12 +33,7 @@ class CreateBusinessView(CreateView):
     form_class = CreateBusinessForm
 
     def get_success_url(self):
-        return reverse(
-            "empresa:edit-business",
-            kwargs={
-                "pk": self.object.pk,
-            }
-        )
+        return reverse("empresa:business-list")
 
     def post(self, request, *args, **kwargs):
         self.object = None
@@ -82,12 +77,7 @@ class EditBusinessView(UpdateView):
     pk_url_kwarg = "pk"
 
     def get_success_url(self):
-        return reverse(
-            "empresa:edit-business",
-            kwargs={
-                "pk": self.object.pk
-            }
-        )
+        return reverse("empresa:business-list")
     
     def post(self, request, *args, **kwargs):
 
@@ -144,6 +134,12 @@ class DeleteBusinessView(DeleteView):
 
     def get_success_url(self):
         return reverse('empresa:business-list')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["list_link"] = "/business"
+        return context
+
     
 
 #Employees Views
