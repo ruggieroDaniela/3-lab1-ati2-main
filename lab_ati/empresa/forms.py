@@ -69,6 +69,7 @@ class CreateEmployeeForm(forms.ModelForm):
             if isinstance(field.widget, forms.widgets.Select):
                 field.widget.attrs.update({
                     "class": "form-select",
+                    "id":"modalidad",
                 })   
 
     class Meta:
