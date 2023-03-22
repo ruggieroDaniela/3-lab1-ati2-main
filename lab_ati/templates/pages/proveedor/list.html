@@ -5,18 +5,22 @@
 <section class="general-container ">
   <h2 class="text-center pb-4">{% trans 'Lista de proveedores de' %} {{empresa.empresa.nombre}}</h2>
   <section class="container d-grid gap-3 pb-4">
+    {% include 'common/messages.html' %}
     <section class="row">
       {% if tieneProveedores %}
       <section class="d-flex justify-content-between mb-2">
         
         <h2>{% trans 'Gestiona proveedores' %}</h2>
-        <a href="/proveedor/crear?empresa={{empresa.id}}">
+
+        <!--Create a new Supplier-->
+        <a id="create_supplier" href="/proveedor/crear?empresa={{empresa.id}}">
           <button type="button" class="btn btn-primary">
             <i class="bi bi-plus-lg"></i>
           </button>
         </a>
       </section>
       
+      <!--List of Suppliers-->
       <table class="table table-success table-striped">
         <thead>
           <tr>
@@ -34,18 +38,26 @@
             <td>
               {{ item.id_tributaria }}            
             </td>
+
+            <!--Actions-->
             <td class="d-flex">
+
+              <!--View-->
               <a href="/proveedor/ver?proveedor={{item.id}}">
                 <button type="button" class="mx-2 btn btn-info">
                   <i class="bi bi-search"></i>
                 </button>
               </a>
+
+              <!--Modify-->
               <a href="/proveedor/modificar?proveedor={{item.id}}">
                 <button type="button" class="mx-2 btn btn-primary">
                   <i class="bi bi-pencil-square"></i>
                 </button>
               </a>
-              <a href="/proveedor/eliminar?proveedor={{item.id}}">
+
+              <!--Delete-->
+              <a id="delete_supplier" href="/proveedor/eliminar?proveedor={{item.id}}">
                 <button type="button" class="mx-2 btn btn-danger">
                   <i class="bi bi-person-x"></i>
                 </button>
@@ -55,6 +67,8 @@
           {% endfor %}
         </tbody>
       </table>
+      
+      <!--No Suppliers-->
       {% else %}
       <section class="d-flex justify-content-between mb-2">
         <h2>{% trans 'No se tienen proveedores registrados' %}</h2>

@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 from .models import Proveedor
 from .forms import ProveedorForm
 #from ..empresa.models import Empresa, SocialMedia 
@@ -14,15 +16,21 @@ def get_item(objectList, key):
     return ""
   return getattr(objectList,key)
 
+# Create Supplier 
 def createProveedor(request):
+
   if request.method == 'GET': 
-    empresaId = request.GET.get('empresa') 
+    empresaId = request.GET.get('empresa')                  # get id 
+
     if(empresaId == None):
       return render(request,'404.html')
-    empresa = Empresa.objects.get(id=empresaId)
-    if(empresa == None):
+
+    
+    try:
+      empresa = Empresa.objects.get(id=empresaId)
+    except ObjectDoesNotExist:
       return render(request,'404.html')
-    #print(empresa)
+    
     formularioProveedor = ProveedorForm(request.GET)
     context = {}
     proveedorSocialMedia = SocialMediaFormset(
@@ -68,17 +76,18 @@ def createProveedor(request):
       add_social_media(proveedorSaved, redes_representante_formset, belongs_to="redes_representante")
       return redirect('/proveedor?empresa='+empresaId)
     return redirect('/proveedor/crear?empresa='+empresaId)
-    
+
+# Update Supplier 
 def updateProveedor(request):
   if request.method == 'GET':
     proveedorId = request.GET.get('proveedor')
-    print('proveedor id: ', proveedorId)
+    
     if(proveedorId == None):
       return render(request,'404.html')
     proveedor = Proveedor.objects.get(id=proveedorId)
     if(proveedor == None):
       return render(request,'404.html') 
-    print(proveedor)
+    
     formularioProveedor = ProveedorForm(request.POST or request.GET)
     socialMediaForm  = SocialMediaFormset(
         prefix="proveedorSocial",
@@ -88,6 +97,9 @@ def updateProveedor(request):
         prefix="representanteSocial",
         queryset=proveedor.redes_representante.all(),
     )
+
+    if formularioProveedor.is_valid():
+      messages.success(request, "Su cambio se ha guardado con éxito")
 
     context = {
       "business_id": proveedor.empresa.id,
@@ -102,6 +114,8 @@ def updateProveedor(request):
       "editing_social":True,
       "list_link":'/proveedor?empresa='+str(proveedor.empresa.id)
     }
+    
+
     return render(request,'pages/proveedor/create-update.html',context)
   elif request.method == 'POST':
     proveedorId = request.GET.get('proveedor')
@@ -117,6 +131,7 @@ def updateProveedor(request):
     empresaId = str(oldProveedor.empresa.id)
     if formularioProveedor.is_valid():
       print('is valid!')
+      messages.success(request, "Su cambio se ha guardado con éxito")
       proveedorSaved = formularioProveedor.save()
       social_media_formset = SocialMediaFormset(
         prefix="proveedorSocial",
@@ -141,12 +156,12 @@ def listProveedor(request):
   empresaId = request.GET.get('empresa')
   print(empresaId)
   if(empresaId == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
 
   empresa = findEmpresa(empresaId)
   print(empresa)
   if(empresa == None): #empresa no existe
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
 
   proveedoresList = Proveedor.objects.filter(empresa__id__contains=empresaId)
   print(proveedoresList)
@@ -160,25 +175,32 @@ def listProveedor(request):
   context["empresa"] = {"empresa":empresa, "id":empresaId}
   context["business_id"] = empresaId
   return render(request,'pages/proveedor/list.html',context)
-  
+
+# Delete Supplier 
 def deleteProveedor(request):
-  proveedorId = request.GET.get('proveedor') 
+  proveedorId = request.GET.get('proveedor')          # get supplier id 
+
+  # Error 
   if(proveedorId == None):
-    return render(request,'pages/404.html')
-  proveedor = Proveedor.objects.get(id=proveedorId)
-  if(proveedor == None):
-    return render(request,'pages/404.html')
-  proveedor.delete()
+    return render(request,'404.html')
+
+  # get supplier 
+  try:
+    proveedor = Proveedor.objects.get(id=proveedorId)
+  except ObjectDoesNotExist:
+    return render(request,'404.html')
+
+  proveedor.delete()                                  # delete 
   empresaId = str(proveedor.empresa.id)
   return redirect('/proveedor?empresa='+empresaId)
 
 def seeProveedor(request):
   proveedorId = request.GET.get('proveedor') 
   if(proveedorId == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
   proveedor = Proveedor.objects.get(id=proveedorId)
   if(proveedor == None):
-    return render(request,'pages/404.html')
+    return render(request,'404.html')
   socialMediaForm  = SocialMediaFormset(
     prefix="proveedorSocial",
     queryset=proveedor.redes_proveedor.all()
