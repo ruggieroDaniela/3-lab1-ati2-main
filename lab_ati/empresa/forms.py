@@ -10,11 +10,10 @@ COUNTRY_CHOICES = (
     ("es", "España"),
 )
 
-
 # creating a form
 class CreateBusinessForm(forms.ModelForm):
     """
-    Formulario del modelo empleado
+    Formulario del modelo empresa
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
@@ -22,7 +21,7 @@ class CreateBusinessForm(forms.ModelForm):
         if(self.instance):
             self.fields['cliente_empresa'].queryset = Empresa.objects.exclude(id = self.instance.id)
         
-        for field in  self.fields.values():
+        for field in self.fields.values():
             if isinstance(field, forms.fields.CharField):
                 if isinstance(field.widget, forms.widgets.Textarea):
                     if(not field.label in ["Dirección", "Servicio que le ofrecimos", "Servicio que proporciona"]):    
@@ -30,7 +29,6 @@ class CreateBusinessForm(forms.ModelForm):
                             "required": True,
                         })
                     
-
                 field.widget.attrs.update({
                     "class": "form-control",
                 })
@@ -39,6 +37,7 @@ class CreateBusinessForm(forms.ModelForm):
                 field.widget.attrs.update({
                     "class": "form-select",
                 })   
+
     class Meta:
         model = Empresa
         fields = "__all__"
