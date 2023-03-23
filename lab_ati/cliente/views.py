@@ -6,6 +6,7 @@ from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.empresa.models import SocialMedia
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
+import requests
 
 def clientes(request, business_id):
     context = {}
@@ -37,6 +38,10 @@ def crear_cliente(request, business_id):
     context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context['business_id'] = business_id
+
+    # Get countries 
+    paises = requests.get("https://restcountries.com/v3.1/all").json()
+    context['paises'] = paises
     return render(request, 'pages/clientes/crear.html', context)
 
 
