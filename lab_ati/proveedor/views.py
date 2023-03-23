@@ -9,6 +9,7 @@ from django.template.defaulttags import register
 from lab_ati.empresa.models import Empresa, SocialMedia
 from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.utils.social_media import add_social_media
+import requests
 
 @register.filter
 def get_item(objectList, key):
@@ -43,6 +44,7 @@ def createProveedor(request):
     )
     #socialMediaRepresentanteForm = SocialMediaFormset(queryset=SocialMedia.objects.none())
     #print(proveedorSocialMedia)
+    paises = requests.get("https://restcountries.com/v3.1/all").json()
     context = {
       "data":{
         "empresa":empresa,
@@ -51,8 +53,10 @@ def createProveedor(request):
         "socialMedia" : proveedorSocialMedia,
         "socialMediaRepresentante": socialMediaRepresentanteForm
       },
-      "list_link":'/proveedor?empresa='+str(empresaId)
+      "list_link":'/proveedor?empresa='+str(empresaId), 
+      "paises": paises
       }
+    
     return render(request,'pages/proveedor/create-update.html', context)
 
   elif request.method == 'POST':

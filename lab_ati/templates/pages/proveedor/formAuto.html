@@ -25,6 +25,20 @@
     <section class="row mb-3">
       <section class="col input-group">
       <label class="input-group-text">{{campo.label}}</label>
+        <!--Paises-->
+        {% if campo.label == 'Pais' %}
+          <select id="select_country" type="{{campo.field.widget.input_type}}"
+          class="form-select"
+          name="{{campo.name}}"
+          placeholder="{{campo.label}}"
+          value="{{data.proveedor|get_item:campo.name}}"
+          Required>
+            {% for i in paises %}
+              <option value={{i.name.common}}>{{i.name.common}} </option>              
+            {% endfor %}
+          </select>
+        {% else %}
+        <!--Otro-->
         <input id="input_info"
         type="{{campo.field.widget.input_type}}"
         class="form-control"
@@ -33,12 +47,25 @@
         value="{{data.proveedor|get_item:campo.name}}"
         Required
         />
+        {% endif %}        
       </section>
     </section>
 
     {% endif %}
     {% endif %}
     {% endfor %}
+
+    <!--Paises-->
+    <label>Paises</label>
+    <select>
+      {% for i in paises %}
+        <option value={{i.name.common}}>{{i.name.common}} </option>              
+      {% endfor %}
+    </select>
+    
+
+    <!--Paises-->
+
     <p>{% trans 'Redes sociales' %}</p>
     {% include "common/social_media_form.html" with socialm_formset=data.socialMedia%}
     <br/>
