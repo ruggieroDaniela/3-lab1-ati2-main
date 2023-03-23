@@ -10,6 +10,7 @@ from django.core import exceptions
 from django.shortcuts import render
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
+import requests
 
 # Businesses Views
 class BusinessListView(ListView):
@@ -226,6 +227,10 @@ class CreateEmployeeView(CreateView):
         context['business_id'] = self.kwargs['business_id']
         context["empresa"] = self.get_empresa()
         context["business_id"] = context["empresa"].id
+
+        # Get countries 
+        paises = requests.get("https://restcountries.com/v3.1/all").json()
+        context["paises"] = paises
 
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
