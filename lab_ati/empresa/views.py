@@ -228,9 +228,14 @@ class CreateEmployeeView(CreateView):
         context["empresa"] = self.get_empresa()
         context["business_id"] = context["empresa"].id
 
-        # Get countries 
-        paises = requests.get("https://restcountries.com/v3.1/all").json()
-        context["paises"] = paises
+        # Get countries
+        countries = requests.get("https://restcountries.com/v3.1/all").json()      # Get information about countries via a RESTful API
+        names = []
+        for i in countries:
+            names.append(i["name"]["common"])
+
+        names = sorted(names)
+        context["paises"] = names
 
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
@@ -301,8 +306,13 @@ class EditEmployeeView(UpdateView):
         context["editing_social"] = True
 
         # Get countries 
-        paises = requests.get("https://restcountries.com/v3.1/all").json()
-        context["paises"] = paises
+        countries = requests.get("https://restcountries.com/v3.1/all").json()      # Get information about countries via a RESTful API
+        names = []
+        for i in countries:
+            names.append(i["name"]["common"])
+
+        names = sorted(names)
+        context["paises"] = names
         
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
         return context
