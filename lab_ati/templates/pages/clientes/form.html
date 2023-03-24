@@ -62,7 +62,7 @@
                                 value="{{ field.value | default:'' }}">
                                 
                                 {% for i in paises %}
-                                    <option value={{i.name.common}} {% if field.value ==  i.name.common  %} selected {% endif %}>{{i.name.common}} </option>              
+                                    <option value='{{i.name.common}}' {% if field.value ==  i.name.common  %} selected {% endif %}>{{i.name.common}} </option>
                                 {% endfor %}
                                 
                             </select>
@@ -114,6 +114,8 @@
         </div>
     </div>
 </form>
+
+
 {% block inline_javascript %}
     <script>
         window.addEventListener('DOMContentLoaded', () => {
