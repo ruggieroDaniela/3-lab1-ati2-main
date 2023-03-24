@@ -171,9 +171,9 @@
                 <section class="input-group">
                     <label class="input-group-text">{{ form.pais.label_tag }}</label>
                     <!--Pais-->
-                    <select type="text" name="pais" required class="form-select" id="id_pais" >
+                    <select type="text" name="pais" required class="form-select" id="id_pais" value="{{ form.pais.value }}">
                     {% for i in paises %}
-                        <option value={{i.name.common}}  >{{i.name.common}} </option>              
+                        <option value={{i.name.common}} {% if form.pais.value == i.name.common %} selected {% endif %} > {{i.name.common}} </option>              
                     {% endfor %}
                     </select>
                     <!--{{ form.pais }}-->
