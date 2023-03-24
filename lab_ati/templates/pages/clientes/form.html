@@ -62,7 +62,7 @@
                                 value="{{ field.value | default:'' }}">
                                 
                                 {% for i in paises %}
-                                    <option value='{{i.name.common}}' {% if field.value ==  i.name.common  %} selected {% endif %}>{{i.name.common}} </option>
+                                    <option value='{{i}}' {% if field.value ==  i  %} selected {% endif %}>{{i}} </option>
                                 {% endfor %}
                                 
                             </select>

@@ -8,6 +8,15 @@ from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
 import requests
 
+def getCountries():
+    countries = requests.get("https://restcountries.com/v3.1/all").json()      # Get information about countries via a RESTful API
+    names = []
+    for i in countries:
+        names.append(i["name"]["common"])
+
+    names = sorted(names)
+    return names
+
 def clientes(request, business_id):
     context = {}
     context['business_id'] = business_id
@@ -38,10 +47,7 @@ def crear_cliente(request, business_id):
     context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context['business_id'] = business_id
-
-    # Get countries 
-    paises = requests.get("https://restcountries.com/v3.1/all").json()
-    context['paises'] = paises
+    context['paises'] = getCountries()
     return render(request, 'pages/clientes/crear.html', context)
 
 
@@ -69,8 +75,6 @@ def editar_cliente(request, id, business_id):
     context["socialm_formset"] = SocialMediaFormset(queryset=cliente.redes_sociales.all())
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context["editing_social"] = True
-
-    # Get countries 
-    paises = requests.get("https://restcountries.com/v3.1/all").json()
-    context['paises'] = paises
+    context['paises'] = getCountries()
+    
     return render(request, 'pages/clientes/editar.html', context)
