@@ -18,7 +18,7 @@ def get_item(objectList, key):
   return getattr(objectList,key)
 
 def getCountries():
-  countries = requests.get("https://restcountries.com/v3.1/all").json()      # Get information about countries via a RESTful API
+  countries = requests.get("https://restcountries.com/v3.1/all?fields=name").json()      # Get information about countries via a RESTful API
   names = []
   for i in countries:
       names.append(i["name"]["common"])
