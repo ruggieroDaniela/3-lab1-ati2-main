@@ -70,4 +70,7 @@ def editar_cliente(request, id, business_id):
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context["editing_social"] = True
 
+    # Get countries 
+    paises = requests.get("https://restcountries.com/v3.1/all").json()
+    context['paises'] = paises
     return render(request, 'pages/clientes/editar.html', context)

@@ -105,6 +105,8 @@ def updateProveedor(request):
     if formularioProveedor.is_valid():
       messages.success(request, "Su cambio se ha guardado con éxito")
 
+    paises = requests.get("https://restcountries.com/v3.1/all").json()
+
     context = {
       "business_id": proveedor.empresa.id,
       "data":{
@@ -116,7 +118,8 @@ def updateProveedor(request):
         "socialMediaRepresentante": socialMediaRepresentanteForm
       },
       "editing_social":True,
-      "list_link":'/proveedor?empresa='+str(proveedor.empresa.id)
+      "list_link":'/proveedor?empresa='+str(proveedor.empresa.id), 
+      "paises": paises
     }
     
 

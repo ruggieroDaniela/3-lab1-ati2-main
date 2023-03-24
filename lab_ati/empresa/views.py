@@ -300,6 +300,10 @@ class EditEmployeeView(UpdateView):
         )
         context["editing_social"] = True
 
+        # Get countries 
+        paises = requests.get("https://restcountries.com/v3.1/all").json()
+        context["paises"] = paises
+        
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
         return context
 
