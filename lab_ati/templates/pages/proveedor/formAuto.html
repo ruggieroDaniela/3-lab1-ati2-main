@@ -26,7 +26,7 @@
       <section class="col input-group">
       <label class="input-group-text">{{campo.label}}</label>
         <!--Paises-->
-        {% if campo.label == 'Pais' %}
+        {% if campo.name == 'pais' %}
           <select id="select_country" type="{{campo.field.widget.input_type}}"
           class="form-select"
           name="{{campo.name}}"
@@ -66,7 +66,7 @@
     <section class="row mb-3">
       <section class="col input-group">
         <label class="input-group-text">{{campo.label}}</label>
-        {% if campo.label == 'Pais de residencia de representante' %}
+        {% if campo.name == 'pais_representante' %}
 
           <!--Paises-->
           <select id="select_country" type="{{campo.field.widget.input_type}}"
