@@ -173,10 +173,9 @@
                     <!--Pais-->
                     <select type="text" name="pais" required class="form-select" id="id_pais" value="{{ form.pais.value }}">
                     {% for i in paises %}
-                        <option value={{i.name.common}} {% if form.pais.value == i.name.common %} selected {% endif %} > {{i.name.common}} </option>              
+                        <option value='{{i.name.common}}' {% if form.pais.value == i.name.common %} selected {% endif %} > {{i.name.common}} </option>              
                     {% endfor %}
-                    </select>
-                    <!--{{ form.pais }}-->
+                    </select>                    
                 </section>   
                 {% for error in form.pais.errors %}
                     <span class="text-danger text-xs">
