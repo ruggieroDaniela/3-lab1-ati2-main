@@ -17,6 +17,15 @@ def get_item(objectList, key):
     return ""
   return getattr(objectList,key)
 
+def getCountries():
+  countries = requests.get("https://restcountries.com/v3.1/all").json()      # Get information about countries via a RESTful API
+  names = []
+  for i in countries:
+      names.append(i["name"]["common"])
+
+  names = sorted(names)
+  return names
+
 # Create Supplier 
 def createProveedor(request):
 
@@ -44,7 +53,7 @@ def createProveedor(request):
     )
     #socialMediaRepresentanteForm = SocialMediaFormset(queryset=SocialMedia.objects.none())
     #print(proveedorSocialMedia)
-    paises = requests.get("https://restcountries.com/v3.1/all").json()
+
     context = {
       "data":{
         "empresa":empresa,
@@ -54,7 +63,7 @@ def createProveedor(request):
         "socialMediaRepresentante": socialMediaRepresentanteForm
       },
       "list_link":'/proveedor?empresa='+str(empresaId), 
-      "paises": paises
+      "paises": getCountries()
       }
     
     return render(request,'pages/proveedor/create-update.html', context)
@@ -105,8 +114,6 @@ def updateProveedor(request):
     if formularioProveedor.is_valid():
       messages.success(request, "Su cambio se ha guardado con éxito")
 
-    paises = requests.get("https://restcountries.com/v3.1/all").json()
-
     context = {
       "business_id": proveedor.empresa.id,
       "data":{
@@ -119,7 +126,7 @@ def updateProveedor(request):
       },
       "editing_social":True,
       "list_link":'/proveedor?empresa='+str(proveedor.empresa.id), 
-      "paises": paises
+      "paises": getCountries()
     }
     
 

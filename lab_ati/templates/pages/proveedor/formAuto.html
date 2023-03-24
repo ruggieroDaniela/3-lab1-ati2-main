@@ -34,7 +34,7 @@
           value="{{data.proveedor|get_item:campo.name}}"
           Required>
             {% for i in paises %}
-              <option value='{{i.name.common}}' {% if data.proveedor|get_item:campo.name ==  i.name.common  %} selected {% endif %}>{{i.name.common}} </option>              
+              <option value='{{i}}' {% if data.proveedor|get_item:campo.name ==  i  %} selected {% endif %}>{{i}} </option>              
             {% endfor %}
           </select>
         {% else %}
@@ -76,7 +76,7 @@
           value="{{data.proveedor|get_item:campo.name}}"
           Required>
             {% for i in paises %}
-              <option value='{{i.name.common}}' {% if data.proveedor|get_item:campo.name ==  i.name.common  %} selected {% endif %}>{{i.name.common}} </option>              
+              <option value='{{i}}' {% if data.proveedor|get_item:campo.name ==  i  %} selected {% endif %}>{{i}} </option>              
             {% endfor %}
           </select>
         {% else %}
