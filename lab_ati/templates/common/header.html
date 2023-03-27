@@ -4,7 +4,7 @@
     <header class="w-100 d-flex justify-content-center custom-header position-fixed top-0 z-40">
         <section class="flex-grow-1 w-100 px-4 py-2 d-flex justify-content-center align-items-center general-container">
             <section class="flex-grow-1">
-                <img src="{% static 'images/logo.png' %%}" width="40" height="40">
+                <img src="{% static 'images/logo.png' %%}" width="40" height="40" id="corporation-logo">
             </section>
             
             
@@ -43,4 +43,13 @@
             </ul>
         </section>
     </header>
+    <input id="file-input" type="file" style="display: none;">
+    <script>
+        $(document).ready(function() {
+            $("#corporation-logo").click(function() {
+                $("#file-input").click();
+            });
+        });
+    </script>
+
 {% endblock %}
