@@ -276,3 +276,5 @@ lab_ati/media/
 .env
 .envs/*
 !.envs/.local/
+
+*.ps1
