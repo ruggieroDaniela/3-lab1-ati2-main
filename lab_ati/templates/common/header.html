@@ -50,6 +50,30 @@
                 $("#file-input").click();
             });
         });
+
+        $('#file-input').change(function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Create a new FormData object and append the selected file to it
+            var formData = new FormData();
+            formData.append('image', $('#file-input')[0].files[0]);
+
+            // Submit the form data via AJAX
+            $.ajax({
+            url: '/upload/',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                console.log('File uploaded successfully!');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error uploading file:', error);
+            }
+            });
+        });
+
     </script>
 
 {% endblock %}

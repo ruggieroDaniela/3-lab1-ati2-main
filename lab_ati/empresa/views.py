@@ -10,6 +10,10 @@ from django.core import exceptions
 from django.shortcuts import render
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
+from django.http import HttpResponse
+import os
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 
 # Businesses Views
 class BusinessListView(ListView):
@@ -311,3 +315,22 @@ class DeleteEmployeeView(DeleteView):
 
     def get_success_url(self):
         return reverse('empresa:list-employee', kwargs={ 'business_id': self.kwargs['business_id']})
+
+def upload(request):
+    if request.method == 'POST' and request.FILES['image']:
+        uploaded_file = request.FILES['image']
+
+        # Save the uploaded file to the static/image directory
+        fs = FileSystemStorage(location=os.path.join(settings.BASE_DIR, 'static/image'))
+        filename = fs.save(uploaded_file.name, uploaded_file)
+
+        # Return a success response
+        return HttpResponse('File uploaded successfully.')
+
+    # Return an error response if no file was uploaded
+    return HttpResponse('Error uploading file.')
+
+def handle_uploaded_file(file, filepath):
+    with open(filepath, 'wb+') as destination:
+        for chunk in file.chunks():
+            destination.write(chunk)
