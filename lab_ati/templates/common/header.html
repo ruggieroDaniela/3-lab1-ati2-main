@@ -49,29 +49,28 @@
             $("#corporation-logo").click(function() {
                 $("#file-input").click();
             });
-        });
 
-        $('#file-input').change(function(event) {
-            event.preventDefault(); // Prevent default form submission
+            $('#file-input').on('change', function() {
+                const image = this.files[0];
+                const formData = new FormData();
+                formData.append('image', image);
+                formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
 
-            // Create a new FormData object and append the selected file to it
-            var formData = new FormData();
-            formData.append('image', $('#file-input')[0].files[0]);
-
-            // Submit the form data via AJAX
-            $.ajax({
-            url: '/upload/',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(data) {
-                console.log('File uploaded successfully!');
-            },
-            error: function(xhr, status, error) {
-                console.error('Error uploading file:', error);
-            }
+                $.ajax({
+                    url: '/image_upload/upload_image/',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
             });
+
         });
 
     </script>

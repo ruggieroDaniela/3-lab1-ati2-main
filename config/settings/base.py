@@ -5,7 +5,9 @@ from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
 import environ
+import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # lab_ati/
 APPS_DIR = ROOT_DIR / "lab_ati"

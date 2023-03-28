@@ -26,6 +26,9 @@ urlpatterns = [
     path("business/", include("lab_ati.empresa.urls", namespace="business")),
     # Employee urls
 
+    # upload images to static folder
+    path('image_upload/', include('lab_ati.image_upload.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
