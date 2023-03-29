@@ -4,7 +4,13 @@
     <header class="w-100 d-flex justify-content-center custom-header position-fixed top-0 z-40">
         <section class="flex-grow-1 w-100 px-4 py-2 d-flex justify-content-center align-items-center general-container">
             <section class="flex-grow-1">
-                <img src="{% static 'images/logo.png' %%}" width="40" height="40" id="corporation-logo">
+                <div class="logo-container">
+                    <img src="{% static 'images/logo.png' %%}" width="40" height="40" id="corporation-logo">
+                    <div class="overlay">
+                        <i class="fa fa-pencil"></i>
+                        <!-- <i class="fa fa-file-image-o"></i> -->
+                    </div>
+                </div>
             </section>
             
             
@@ -46,7 +52,7 @@
     <input id="file-input" accept="image/png" type="file" style="display: none;">
     <script>
         $(document).ready(function() {
-            $("#corporation-logo").click(function() {
+            $(".overlay").click(function() {
                 $("#file-input").click();
             });
 
