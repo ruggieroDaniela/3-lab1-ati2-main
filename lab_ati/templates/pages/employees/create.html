@@ -166,11 +166,16 @@
             </section>
         </section>
 
-        <section class="row"">
+        <section class="row">
             <section class="col">    
                 <section class="input-group">
                     <label class="input-group-text">{{ form.pais.label_tag }}</label>
-                    {{ form.pais }}
+                    <!--Pais-->
+                    <select type="text" name="pais" required class="form-select" id="id_pais" value="{{ form.pais.value }}">
+                    {% for i in paises %}
+                        <option value='{{i}}' {% if form.pais.value == i %} selected {% endif %} > {{i}} </option>              
+                    {% endfor %}
+                    </select>                    
                 </section>   
                 {% for error in form.pais.errors %}
                     <span class="text-danger text-xs">
@@ -179,6 +184,7 @@
                     </span>
                 {% endfor %}
             </section>
+
             
             <input type="hidden" name="empresa" value="{{ business_id }}" />
         </section>

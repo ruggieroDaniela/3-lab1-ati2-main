@@ -11,6 +11,8 @@ from lab_ati.cliente.models import Cliente
 from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.empresa.models import SocialMedia
 from lab_ati.utils.social_media import add_social_media
+from django.urls import reverse
+import requests
 
 
 def cambiarNombre(request):
@@ -28,7 +30,16 @@ def cambiarNombre(request):
     
     return redirect(request.META['HTTP_REFERER'])
 
-        
+
+def getCountries():
+    countries = requests.get("https://restcountries.com/v3.1/all?fields=name").json()      # Get information about countries via a RESTful API
+    names = []
+    for i in countries:
+        names.append(i["name"]["common"])
+
+    names = sorted(names)
+    return names
+
 
 def clientes(request, business_id):
     context = {}
@@ -60,6 +71,7 @@ def crear_cliente(request, business_id):
     context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context['business_id'] = business_id
+    context['paises'] = getCountries()
     return render(request, 'pages/clientes/crear.html', context)
 
 
@@ -87,5 +99,6 @@ def editar_cliente(request, id, business_id):
     context["socialm_formset"] = SocialMediaFormset(queryset=cliente.redes_sociales.all())
     context["list_link"] = reverse("clients", kwargs={"business_id": business_id} )
     context["editing_social"] = True
-
+    context['paises'] = getCountries()
+    
     return render(request, 'pages/clientes/editar.html', context)
