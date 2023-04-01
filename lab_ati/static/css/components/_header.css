@@ -17,9 +17,9 @@
 
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 1rem;
+  position: relative;
+  top: -3rem;
+  left: -0.5rem;
   width: 25px;
     height: 25px;
   /* width: 100%;
