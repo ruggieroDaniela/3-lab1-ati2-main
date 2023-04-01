@@ -50,7 +50,23 @@
                                 <h5>{% trans "Otro" %}</h5>
                             </option>
                         </select>
-                    {% else %}
+                    {% else %}                        
+                        <!--Pais-->
+                        {% if field.name == 'pais' %}
+                            <label class="input-group-text">{% trans "Pais" %}</label>
+                            <select 
+                                class="form-select" 
+                                aria-label="Default select example"
+                                name="{{ field.name }}"
+                                placeholder="{{ field.label }}" 
+                                value="{{ field.value | default:'' }}">
+                                
+                                {% for i in paises %}
+                                    <option value='{{i}}' {% if field.value ==  i  %} selected {% endif %}>{{i}} </option>
+                                {% endfor %}
+                                
+                            </select>
+                        {% else %}                        
                         <label class="input-group-text" name={{field.name}}>{{ field.label }}</label>
                         <input 
                             type="{{ field.widget.input_type }}"
@@ -65,6 +81,7 @@
                             {% endif %}
                             Required
                         >
+                        {% endif %}
                     {% endif %}
                 {% endif %}
                 <span class="text-danger text-xs mx-2">
@@ -97,6 +114,8 @@
         </div>
     </div>
 </form>
+
+
 {% block inline_javascript %}
     <script>
         window.addEventListener('DOMContentLoaded', () => {

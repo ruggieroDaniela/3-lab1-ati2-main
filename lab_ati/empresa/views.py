@@ -10,6 +10,16 @@ from django.core import exceptions
 from django.shortcuts import render
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
+import requests
+
+def getCountries():
+    countries = requests.get("https://restcountries.com/v3.1/all?fields=name").json()      # Get information about countries via a RESTful API
+    names = []
+    for i in countries:
+        names.append(i["name"]["common"])
+
+    names = sorted(names)
+    return names
 
 # Businesses Views
 class BusinessListView(ListView):
@@ -227,6 +237,9 @@ class CreateEmployeeView(CreateView):
         context["empresa"] = self.get_empresa()
         context["business_id"] = context["empresa"].id
 
+        # Get countries        
+        context["paises"] = getCountries()
+
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
 
@@ -295,6 +308,9 @@ class EditEmployeeView(UpdateView):
         )
         context["editing_social"] = True
 
+        # Get countries         
+        context["paises"] = getCountries()
+        
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
         return context
 
