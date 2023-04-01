@@ -51,6 +51,7 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                               
                               <li><a class="dropdown-item" id="cambiar-nombre" data-toggle="modal" data-target="#modify-modal" href="#">Cambiar nombre</a></li>
+                              <li><a class="dropdown-item" id="modify-logo" href="#">Cambiar logo</a></li>
                             </ul>
                           </div>
                     </form>
@@ -94,6 +95,12 @@
         $(document).ready(function() {
             $(".overlay").click(function() {
                 $("#file-input").click();
+            });
+
+            $("#modify-logo").click(function(e) {
+                e.preventDefault();
+                $("#file-input").click();
+                return false;
             });
 
             $('#file-input').on('change', function() {
