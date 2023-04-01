@@ -1,11 +1,13 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: PO French\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-01 17:06+0000\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: PO French\n"
-"Language: de\n"
 
 #: config/settings/base.py:31
 msgid "Español"
@@ -23,15 +25,15 @@ msgstr "Französisch"
 msgid "Aleman"
 msgstr "Deutsch"
 
-#: lab_ati/cliente/models.py:8 lab_ati/templates/pages/clientes/form.html:23
+#: lab_ati/cliente/models.py:8 lab_ati/templates/pages/clientes/form.html:44
 msgid "Labora empresa"
 msgstr "Arbeitsunternehmen"
 
-#: lab_ati/cliente/models.py:9 lab_ati/templates/pages/clientes/form.html:26
+#: lab_ati/cliente/models.py:9 lab_ati/templates/pages/clientes/form.html:47
 msgid "Estudiante"
 msgstr "Student"
 
-#: lab_ati/cliente/models.py:10 lab_ati/templates/pages/clientes/form.html:29
+#: lab_ati/cliente/models.py:10 lab_ati/templates/pages/clientes/form.html:50
 msgid "Otro"
 msgstr "Andere"
 
@@ -43,13 +45,13 @@ msgstr "Name und Nachname"
 msgid "Compañia/Organismo"
 msgstr "Unternehmen/Organisation"
 
-#: lab_ati/cliente/models.py:19 lab_ati/empresa/models.py:104
+#: lab_ati/cliente/models.py:19 lab_ati/empresa/models.py:112
 #: lab_ati/templates/pages/employees/detail.html:13
 #: lab_ati/templates/pages/proveedor/read.html:76
 msgid "Cargo"
 msgstr "Post"
 
-#: lab_ati/cliente/models.py:24 lab_ati/empresa/models.py:110
+#: lab_ati/cliente/models.py:24 lab_ati/empresa/models.py:118
 #: lab_ati/proveedor/models.py:23
 msgid "Empresa"
 msgstr "Unternehmen"
@@ -58,11 +60,11 @@ msgstr "Unternehmen"
 msgid "Email personal"
 msgstr "Persönliche E-Mail"
 
-#: lab_ati/cliente/models.py:29 lab_ati/empresa/models.py:121
+#: lab_ati/cliente/models.py:29 lab_ati/empresa/models.py:132
 msgid "Teléfono celular"
 msgstr "Handy"
 
-#: lab_ati/cliente/models.py:30 lab_ati/empresa/models.py:44
+#: lab_ati/cliente/models.py:30 lab_ati/empresa/models.py:45
 #: lab_ati/templates/pages/business/detail.html:18
 msgid "Whatsapp"
 msgstr "Whatsapp"
@@ -71,52 +73,52 @@ msgstr "Whatsapp"
 msgid "Servicio ofrecido"
 msgstr "Angebotener Service"
 
-#: lab_ati/cliente/models.py:32 lab_ati/empresa/models.py:58
+#: lab_ati/cliente/models.py:32 lab_ati/empresa/models.py:62
 msgid "Curso de interés"
 msgstr "Kurs von Interesse"
 
-#: lab_ati/cliente/models.py:33 lab_ati/empresa/models.py:59
+#: lab_ati/cliente/models.py:33 lab_ati/empresa/models.py:63
 msgid "Frecuencia con la que desea mantenerse informado"
 msgstr "Wie oft möchten Sie informiert werden?"
 
-#: lab_ati/empresa/models.py:12 lab_ati/templates/pages/business/detail.html:13
+#: lab_ati/empresa/models.py:11 lab_ati/templates/pages/business/detail.html:13
 #: lab_ati/templates/pages/employees/detail.html:17
 msgid "Ciudad"
 msgstr "Stadt"
 
-#: lab_ati/empresa/models.py:13
+#: lab_ati/empresa/models.py:12
 msgid "Pais"
 msgstr "Land"
 
-#: lab_ati/empresa/models.py:25 lab_ati/empresa/models.py:96
+#: lab_ati/empresa/models.py:24 lab_ati/empresa/models.py:99
 #: lab_ati/templates/pages/business/detail.html:10
-#: lab_ati/templates/pages/business/list.html:23
+#: lab_ati/templates/pages/business/list.html:25
 #: lab_ati/templates/pages/employees/detail.html:10
 #: lab_ati/templates/pages/employees/list.html:27
-#: lab_ati/templates/pages/proveedor/list.html:23
+#: lab_ati/templates/pages/proveedor/list.html:27
 #: lab_ati/templates/pages/proveedor/read.html:12
 #: lab_ati/templates/pages/proveedor/read.html:72
 msgid "Nombre"
 msgstr "Name"
 
-#: lab_ati/empresa/models.py:26
+#: lab_ati/empresa/models.py:25
 msgid "Número de identificación tributaria"
 msgstr "Steueridentifikationsnummer"
 
-#: lab_ati/empresa/models.py:27 lab_ati/templates/pages/business/detail.html:15
+#: lab_ati/empresa/models.py:26 lab_ati/templates/pages/business/detail.html:15
 msgid "Email"
 msgstr "Email"
 
-#: lab_ati/empresa/models.py:28 lab_ati/templates/pages/business/detail.html:14
+#: lab_ati/empresa/models.py:27 lab_ati/templates/pages/business/detail.html:14
 #: lab_ati/templates/pages/proveedor/read.html:32
 msgid "Dirección"
 msgstr "Adresse"
 
-#: lab_ati/empresa/models.py:29
+#: lab_ati/empresa/models.py:28
 msgid "Sitio web"
 msgstr "Webseite"
 
-#: lab_ati/empresa/models.py:30 lab_ati/empresa/models.py:42
+#: lab_ati/empresa/models.py:29 lab_ati/empresa/models.py:42
 #: lab_ati/templates/pages/business/detail.html:20
 #: lab_ati/templates/pages/proveedor/read.html:16
 msgid "Servicio que proporciona"
@@ -126,60 +128,60 @@ msgstr "Dienstleistung, die Sie anbieten"
 msgid "Servicio que le ofrecimos"
 msgstr "Service, den wir Ihnen angeboten haben"
 
-#: lab_ati/empresa/models.py:47 lab_ati/empresa/models.py:54
-#: lab_ati/empresa/models.py:124 lab_ati/empresa/models.py:130
+#: lab_ati/empresa/models.py:48 lab_ati/empresa/models.py:57
+#: lab_ati/empresa/models.py:136 lab_ati/empresa/models.py:147
 msgid "El campo debe ser un número de teléfono"
 msgstr "Das Feld muss eine Telefonnummer sein"
 
-#: lab_ati/empresa/models.py:51 lab_ati/templates/pages/business/detail.html:17
+#: lab_ati/empresa/models.py:54 lab_ati/templates/pages/business/detail.html:17
 #: lab_ati/templates/pages/proveedor/read.html:20
 #: lab_ati/templates/pages/proveedor/read.html:88
 msgid "Teléfono"
 msgstr "Telefon"
 
-#: lab_ati/empresa/models.py:65 lab_ati/templates/pages/business/detail.html:24
+#: lab_ati/empresa/models.py:70 lab_ati/templates/pages/business/detail.html:24
 msgid "Cliente de empresa"
 msgstr "Geschäftskunde"
 
-#: lab_ati/empresa/models.py:93
+#: lab_ati/empresa/models.py:96
 msgid "Fijo"
 msgstr "Dauerhaft"
 
-#: lab_ati/empresa/models.py:94
+#: lab_ati/empresa/models.py:97
 msgid "Honorario profesionales"
 msgstr "Honorare"
 
-#: lab_ati/empresa/models.py:97
+#: lab_ati/empresa/models.py:100
 msgid "Apellido"
 msgstr "Familienname, Nachname"
 
-#: lab_ati/empresa/models.py:98
+#: lab_ati/empresa/models.py:102
 msgid "Cédula o nro pasaporte"
 msgstr "Personalausweis- oder Reisepassnummer"
 
-#: lab_ati/empresa/models.py:100
+#: lab_ati/empresa/models.py:106
 msgid "El campo debe ser una cédula de identidad o número de pasaporte"
 msgstr "Das Feld muss eine Personalausweis- oder Passnummer sein"
 
-#: lab_ati/empresa/models.py:115
+#: lab_ati/empresa/models.py:124
 msgid "Modalidad de contratación"
 msgstr "Modalität des Vertragsabschlusses"
 
-#: lab_ati/empresa/models.py:118
+#: lab_ati/empresa/models.py:128
 msgid "Correo electrónico de la empresa"
 msgstr "Firmen-E-Mail"
 
-#: lab_ati/empresa/models.py:119
+#: lab_ati/empresa/models.py:129
 msgid "Correo personal"
 msgstr "Persönliche Post"
 
-#: lab_ati/empresa/models.py:128
+#: lab_ati/empresa/models.py:143
 #: lab_ati/templates/pages/employees/detail.html:14
 #: lab_ati/templates/pages/proveedor/read.html:92
 msgid "Teléfono local"
 msgstr "Lokales Telefon"
 
-#: lab_ati/empresa/views.py:164 lab_ati/empresa/views.py:234
+#: lab_ati/empresa/views.py:214 lab_ati/empresa/views.py:281
 msgid "La empresa no existe"
 msgstr "Das Unternehmen existiert nicht"
 
@@ -265,8 +267,13 @@ msgid "Warning:"
 msgstr "Notiz:"
 
 #: lab_ati/templates/account/email.html:46
-msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "Sie haben derzeit keine E-Mail-Adresse eingerichtet. Sie sollten wirklich eine E-Mail-Adresse hinzufügen, damit Sie Benachrichtigungen erhalten, Ihr Passwort zurücksetzen usw."
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Sie haben derzeit keine E-Mail-Adresse eingerichtet. Sie sollten wirklich "
+"eine E-Mail-Adresse hinzufügen, damit Sie Benachrichtigungen erhalten, Ihr "
+"Passwort zurücksetzen usw."
 
 #: lab_ati/templates/account/email.html:51
 msgid "Add E-mail Address"
@@ -286,16 +293,26 @@ msgid "Confirm E-mail Address"
 msgstr "E-Mail-Adresse bestätigen"
 
 #: lab_ati/templates/account/email_confirm.html:16
-msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr "Bitte bestätigen Sie, dass <a href=\"mailto:%(email)s\">%(email)s</a> eine E-Mail-Adresse für Benutzer %(user_display)s ist."
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Bitte bestätigen Sie, dass <a href=\"mailto:%(email)s\">%(email)s</a> eine E-"
+"Mail-Adresse für Benutzer %(user_display)s ist."
 
 #: lab_ati/templates/account/email_confirm.html:20
 msgid "Confirm"
 msgstr "bestätigen"
 
 #: lab_ati/templates/account/email_confirm.html:27
-msgid "This e-mail confirmation link expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
-msgstr "Dieser E-Mail-Bestätigungslink ist abgelaufen oder ungültig. Bitte <a href=\"%(email_url)s\">stellen Sie eine neue E-Mail-Bestätigungsanfrage</a>."
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Dieser E-Mail-Bestätigungslink ist abgelaufen oder ungültig. Bitte <a href="
+"\"%(email_url)s\">stellen Sie eine neue E-Mail-Bestätigungsanfrage</a>."
 
 #: lab_ati/templates/account/login.html:7
 #: lab_ati/templates/account/login.html:11
@@ -305,19 +322,30 @@ msgstr "Anmelden"
 
 #: lab_ati/templates/account/login.html:17
 msgid "Please sign in with one of your existing third party accounts:"
-msgstr "Bitte melden Sie sich mit einem Ihrer bestehenden Drittanbieterkonten an:"
+msgstr ""
+"Bitte melden Sie sich mit einem Ihrer bestehenden Drittanbieterkonten an:"
 
 #: lab_ati/templates/account/login.html:19
-msgid "Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and sign in below:"
-msgstr "Oder <a href=\"%(signup_url)s\">registrieren</a> Sie sich für ein %(site_name)s-Konto und melden Sie sich unten an:"
+#, python-format
+msgid ""
+"Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and "
+"sign in below:"
+msgstr ""
+"Oder <a href=\"%(signup_url)s\">registrieren</a> Sie sich für ein "
+"%(site_name)s-Konto und melden Sie sich unten an:"
 
 #: lab_ati/templates/account/login.html:32
 msgid "or"
 msgstr "oder"
 
 #: lab_ati/templates/account/login.html:41
-msgid "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
-msgstr "Wenn Sie noch kein Konto erstellt haben, dann <a href=\"%(signup_url)s\">registrieren Sie sich bitte zuerst</a>."
+#, python-format
+msgid ""
+"If you have not created an account yet, then please <a href=\"%(signup_url)s"
+"\">sign up</a> first."
+msgstr ""
+"Wenn Sie noch kein Konto erstellt haben, dann <a href=\"%(signup_url)s"
+"\">registrieren Sie sich bitte zuerst</a>."
 
 #: lab_ati/templates/account/login.html:55
 msgid "Forgot Password?"
@@ -351,8 +379,12 @@ msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
 #: lab_ati/templates/account/password_reset.html:16
-msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr "Passwort vergessen? Geben Sie unten Ihre E-Mail-Adresse ein und wir senden Ihnen eine E-Mail, mit der Sie sie zurücksetzen können."
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"Passwort vergessen? Geben Sie unten Ihre E-Mail-Adresse ein und wir senden "
+"Ihnen eine E-Mail, mit der Sie sie zurücksetzen können."
 
 #: lab_ati/templates/account/password_reset.html:21
 msgid "Reset My Password"
@@ -360,19 +392,32 @@ msgstr "Setze mein Passwort zurück"
 
 #: lab_ati/templates/account/password_reset.html:24
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr "Bitte kontaktieren Sie uns, wenn Sie Probleme beim Zurücksetzen Ihres Passworts haben."
+msgstr ""
+"Bitte kontaktieren Sie uns, wenn Sie Probleme beim Zurücksetzen Ihres "
+"Passworts haben."
 
 #: lab_ati/templates/account/password_reset_done.html:15
-msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr "Wir haben Ihnen eine E-Mail gesendet. Bitte kontaktieren Sie uns, wenn Sie es nicht innerhalb weniger Minuten erhalten."
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Wir haben Ihnen eine E-Mail gesendet. Bitte kontaktieren Sie uns, wenn Sie "
+"es nicht innerhalb weniger Minuten erhalten."
 
 #: lab_ati/templates/account/password_reset_from_key.html:8
 msgid "Bad Token"
 msgstr "Schlechtes Zeichen"
 
 #: lab_ati/templates/account/password_reset_from_key.html:12
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
-msgstr "Der Link zum Zurücksetzen des Passworts war ungültig, möglicherweise weil er bereits verwendet wurde. Bitte fordern Sie ein <a href=\"%(passwd_reset_url)s\">neues Zurücksetzen des Passworts</a> an."
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"Der Link zum Zurücksetzen des Passworts war ungültig, möglicherweise weil er "
+"bereits verwendet wurde. Bitte fordern Sie ein <a href=\"%(passwd_reset_url)s"
+"\">neues Zurücksetzen des Passworts</a> an."
 
 #: lab_ati/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -399,8 +444,12 @@ msgid "Sign Up"
 msgstr "Anmeldung"
 
 #: lab_ati/templates/account/signup.html:11
-msgid "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
-msgstr "Sie haben bereits ein Konto? Dann <a href=\"%(login_url)s\">melden Sie sich bitte an</a>."
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Sie haben bereits ein Konto? Dann <a href=\"%(login_url)s\">melden Sie sich "
+"bitte an</a>."
 
 #: lab_ati/templates/account/signup_closed.html:5
 #: lab_ati/templates/account/signup_closed.html:8
@@ -419,28 +468,43 @@ msgid "Verify Your E-mail Address"
 msgstr "Bestätige deine Email-Adresse"
 
 #: lab_ati/templates/account/verification_sent.html:10
-msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr "Wir haben Ihnen zur Bestätigung eine E-Mail gesendet. Folgen Sie dem bereitgestellten Link, um den Anmeldevorgang abzuschließen. Bitte kontaktieren Sie uns, wenn Sie es nicht innerhalb weniger Minuten erhalten."
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Wir haben Ihnen zur Bestätigung eine E-Mail gesendet. Folgen Sie dem "
+"bereitgestellten Link, um den Anmeldevorgang abzuschließen. Bitte "
+"kontaktieren Sie uns, wenn Sie es nicht innerhalb weniger Minuten erhalten."
 
 #: lab_ati/templates/account/verified_email_required.html:12
-msgid "This part of the site requires us to verify that\n"
+msgid ""
+"This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
-msgstr "Dieser Teil der Website erfordert, dass wir dies überprüfen\n"
+msgstr ""
+"Dieser Teil der Website erfordert, dass wir dies überprüfen\n"
 "du bist, wer du vorgibst zu sein. Dazu benötigen wir von Ihnen\n"
 "den Besitz Ihrer E-Mail-Adresse bestätigen. "
 
 #: lab_ati/templates/account/verified_email_required.html:16
-msgid "We have sent an e-mail to you for\n"
+msgid ""
+"We have sent an e-mail to you for\n"
 "verification. Please click on the link inside this e-mail. Please\n"
 "contact us if you do not receive it within a few minutes."
-msgstr "Wir haben Ihnen eine E-Mail für gesendet\n"
+msgstr ""
+"Wir haben Ihnen eine E-Mail für gesendet\n"
 "Überprüfung. Bitte klicken Sie auf den Link in dieser E-Mail. por favor\n"
 "Kontaktieren Sie uns, wenn Sie es nicht innerhalb weniger Minuten erhalten."
 
 #: lab_ati/templates/account/verified_email_required.html:20
-msgid "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
-msgstr "<strong>Hinweis:</strong> Sie können immer noch <a href=\"%(email_url)s\">Ihre E-Mail-Adresse ändern</a>."
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Hinweis:</strong> Sie können immer noch <a href=\"%(email_url)s"
+"\">Ihre E-Mail-Adresse ändern</a>."
 
 #: lab_ati/templates/common/footer.html:8
 msgid "Copyright"
@@ -456,19 +520,19 @@ msgstr "Firmen"
 
 #: lab_ati/templates/common/header.html:17
 #: lab_ati/templates/pages/business/detail.html:39
-#: lab_ati/templates/pages/business/list.html:66
+#: lab_ati/templates/pages/business/list.html:68
 msgid "Clientes"
 msgstr "Kunden"
 
 #: lab_ati/templates/common/header.html:20
 #: lab_ati/templates/pages/business/detail.html:44
-#: lab_ati/templates/pages/business/list.html:76
+#: lab_ati/templates/pages/business/list.html:78
 msgid "Proveedores"
 msgstr "Lieferanten"
 
 #: lab_ati/templates/common/header.html:23
 #: lab_ati/templates/pages/business/detail.html:49
-#: lab_ati/templates/pages/business/list.html:71
+#: lab_ati/templates/pages/business/list.html:73
 msgid "Empleados"
 msgstr "Mitarbeiter"
 
@@ -504,12 +568,16 @@ msgstr "Firmeninformationen bearbeiten"
 #: lab_ati/templates/pages/business/create.html:104
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
-msgid "Formatos válidos de número de teléfono: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234"
-msgstr "Gültige Telefonnummernformate: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234"
+msgid ""
+"Formatos válidos de número de teléfono: +58-0212-123-1234, "
+"+58-0212-123-12-34, +5802121231234"
+msgstr ""
+"Gültige Telefonnummernformate: +58-0212-123-1234, +58-0212-123-12-34, "
+"+5802121231234"
 
 #: lab_ati/templates/pages/business/create.html:162
-#: lab_ati/templates/pages/proveedor/formAuto.html:40
-#: lab_ati/templates/pages/proveedor/formAuto.html:65
+#: lab_ati/templates/pages/proveedor/formAuto.html:42
+#: lab_ati/templates/pages/proveedor/formAuto.html:67
 #: lab_ati/templates/pages/proveedor/read.html:49
 #: lab_ati/templates/pages/proveedor/read.html:105
 msgid "Redes sociales"
@@ -546,12 +614,12 @@ msgid "Información de la empresa"
 msgstr "Firmeninformation"
 
 #: lab_ati/templates/pages/business/detail.html:11
-#: lab_ati/templates/pages/proveedor/list.html:24
+#: lab_ati/templates/pages/proveedor/list.html:28
 msgid "Id Tributaria"
 msgstr "Steuer ID"
 
 #: lab_ati/templates/pages/business/detail.html:12
-#: lab_ati/templates/pages/business/list.html:26
+#: lab_ati/templates/pages/business/list.html:28
 #: lab_ati/templates/pages/clientes/index.html:21
 #: lab_ati/templates/pages/employees/detail.html:16
 #: lab_ati/templates/pages/proveedor/read.html:24
@@ -582,22 +650,22 @@ msgstr "Bearbeiten"
 msgid "Eliminar"
 msgstr "Beseitigen"
 
-#: lab_ati/templates/pages/business/list.html:6
-msgid "Empresas de la corporación X"
-msgstr "Unternehmen der Gesellschaft X"
+#: lab_ati/templates/pages/business/list.html:8
+msgid "Empresas de la Corporación"
+msgstr "Unternehmen der Corporation"
 
-#: lab_ati/templates/pages/business/list.html:11
+#: lab_ati/templates/pages/business/list.html:13
 msgid "Gestiona empresas"
 msgstr "Unternehmen verwalten"
 
-#: lab_ati/templates/pages/business/list.html:29
+#: lab_ati/templates/pages/business/list.html:31
 msgid "RIF"
 msgstr "R.I.F."
 
-#: lab_ati/templates/pages/business/list.html:32
+#: lab_ati/templates/pages/business/list.html:34
 #: lab_ati/templates/pages/clientes/index.html:22
 #: lab_ati/templates/pages/employees/list.html:33
-#: lab_ati/templates/pages/proveedor/list.html:25
+#: lab_ati/templates/pages/proveedor/list.html:29
 msgid "Acciones"
 msgstr "Aktionen"
 
@@ -609,17 +677,17 @@ msgstr "Erstellen Sie einen Client mit Informationen"
 msgid "Edita la información de un cliente"
 msgstr "Kundeninformationen bearbeiten"
 
-#: lab_ati/templates/pages/clientes/form.html:14
+#: lab_ati/templates/pages/clientes/form.html:35
 #: lab_ati/templates/pages/clientes/index.html:20
 msgid "Tipo"
 msgstr "Kerl"
 
-#: lab_ati/templates/pages/clientes/form.html:57
+#: lab_ati/templates/pages/clientes/form.html:81
 #: lab_ati/templates/pages/clientes/verCliente.html:30
 msgid "Redes Sociales"
 msgstr "Soziale Netzwerke"
 
-#: lab_ati/templates/pages/clientes/form.html:71
+#: lab_ati/templates/pages/clientes/form.html:95
 msgid "Enviar"
 msgstr "Schicken"
 
@@ -648,7 +716,8 @@ msgid "Edita la información de un empleado"
 msgstr "Bearbeiten Sie die Informationen eines Mitarbeiters"
 
 #: lab_ati/templates/pages/employees/create.html:64
-msgid "Formatos válidos de número de cédula o pasaporte: V-12.345.678, ABC123DEF4"
+msgid ""
+"Formatos válidos de número de cédula o pasaporte: V-12.345.678, ABC123DEF4"
 msgstr "Gültige Ausweis- oder Passnummernformate: V-12.345.678, ABC123DEF4"
 
 #: lab_ati/templates/pages/employees/create.html:203
@@ -708,16 +777,16 @@ msgstr "Anbieter ändern"
 msgid "Registro de Proveedor para empresa"
 msgstr "Lieferantenregistrierung für Unternehmen"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:19
+#: lab_ati/templates/pages/proveedor/formAuto.html:21
 #: lab_ati/templates/pages/proveedor/read.html:6
 msgid "Información del proveedor"
 msgstr "Anbieterinformationen"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:43
+#: lab_ati/templates/pages/proveedor/formAuto.html:45
 msgid "Información del representante"
 msgstr "Repräsentative Informationen"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:85
+#: lab_ati/templates/pages/proveedor/formAuto.html:87
 msgid "Guardar"
 msgstr "Halten"
 
@@ -725,11 +794,11 @@ msgstr "Halten"
 msgid "Lista de proveedores de"
 msgstr "Liste der Anbieter"
 
-#: lab_ati/templates/pages/proveedor/list.html:12
+#: lab_ati/templates/pages/proveedor/list.html:13
 msgid "Gestiona proveedores"
 msgstr "Lieferanten verwalten"
 
-#: lab_ati/templates/pages/proveedor/list.html:60
+#: lab_ati/templates/pages/proveedor/list.html:74
 msgid "No se tienen proveedores registrados"
 msgstr "Es gibt keine registrierten Anbieter"
 
@@ -789,4 +858,3 @@ msgstr "Name des Benutzers"
 #: lab_ati/users/views.py:25
 msgid "Information successfully updated"
 msgstr "Informationen erfolgreich aktualisiert"
-

@@ -38,9 +38,49 @@
                             {% endfor %}
                         </select>
                         <input type="submit" class="btn btn-primary" value="{% trans 'Cambiar' %}">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-gear"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                              
+                              <li><a class="dropdown-item" id="cambiar-nombre" data-toggle="modal" data-target="#modify-modal" href="#">Cambiar nombre</a></li>
+                            </ul>
+                          </div>
                     </form>
                 </li>
             </ul>
         </section>
     </header>
+
+<!-- Ventana modal -->
+<div class="modal fade" id="modify-modal" tabindex="-1" role="dialog" aria-labelledby="modify-modal-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title" id="modify-modal-title">Modificar nombre</h5>
+        <button type="button" class="close float-end" data-dismiss="modal" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <form action="cambiar-nombre" method="post">
+        {% csrf_token %}
+        <div class="modal-body">
+          <label for="new-value">Ingrese el nombre de la corporación:</label>
+          <input type="text" class="form-control" id="new-value" name="new-value" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          
+
+            
+            <input type="submit" class="btn btn-primary" onclick="$('#modal_id').modal('hide');" value="Guardar Cambios" >
+      </form>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock %}

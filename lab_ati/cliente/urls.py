@@ -4,7 +4,8 @@ from lab_ati.cliente.views import (
     ver_cliente,
     crear_cliente,
     eliminar_cliente, 
-    editar_cliente
+    editar_cliente,
+    cambiarNombre
     )
 
 urlpatterns = [
@@ -12,5 +13,6 @@ urlpatterns = [
     path('<slug:business_id>/clients/create', crear_cliente, name='create-client'),
     path('<slug:business_id>/clients/<slug:id>', ver_cliente, name='detail-client'),
     path('<slug:business_id>/clients/delete/<slug:id>', eliminar_cliente, name='delete-client'),
-    path('<slug:business_id>/clients/edit/<slug:id>', editar_cliente, name='edit-client')
+    path('<slug:business_id>/clients/edit/<slug:id>', editar_cliente, name='edit-client'),
+    path('cambiar-nombre', cambiarNombre,name="cambiar-nombre")
 ]
