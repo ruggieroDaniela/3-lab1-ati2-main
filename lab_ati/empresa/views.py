@@ -14,12 +14,44 @@ from django.http import HttpResponse
 import os
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+import requests
+
+def cambiarNombre(request):
+    if request.method == 'POST':
+        # Obtener el nuevo nombre del POST
+        nuevo_nombre = request.POST.get('nuevo_nombre')
+        
+        # Realizar la lógica para cambiar el nombre
+        # ...
+        
+        # Enviar una respuesta exitosa
+        return HttpResponse('El nombre ha sido cambiado exitosamente')
+
+
+def getCountries():
+    countries = requests.get("https://restcountries.com/v3.1/all?fields=name").json()      # Get information about countries via a RESTful API
+    names = []
+    for i in countries:
+        names.append(i["name"]["common"])
+
+    names = sorted(names)
+    return names
 
 # Businesses Views
 class BusinessListView(ListView):
     template_name = "pages/business/list.html"
     model = Empresa
     paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        with open('lab_ati/nombre.txt', 'r') as archivo:
+            contenido = archivo.read()
+
+        
+        context['mi_variable'] = contenido
+        return context
+
 
 class BusinessDetailsView(DetailView):
     template_name = "pages/business/detail.html"
@@ -231,6 +263,9 @@ class CreateEmployeeView(CreateView):
         context["empresa"] = self.get_empresa()
         context["business_id"] = context["empresa"].id
 
+        # Get countries        
+        context["paises"] = getCountries()
+
         # Header
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
 
@@ -299,6 +334,9 @@ class EditEmployeeView(UpdateView):
         )
         context["editing_social"] = True
 
+        # Get countries         
+        context["paises"] = getCountries()
+        
         context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
         return context
 

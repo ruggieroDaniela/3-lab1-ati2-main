@@ -9,12 +9,22 @@ from django.template.defaulttags import register
 from lab_ati.empresa.models import Empresa, SocialMedia
 from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.utils.social_media import add_social_media
+import requests
 
 @register.filter
 def get_item(objectList, key):
   if objectList == "":
     return ""
   return getattr(objectList,key)
+
+def getCountries():
+  countries = requests.get("https://restcountries.com/v3.1/all?fields=name").json()      # Get information about countries via a RESTful API
+  names = []
+  for i in countries:
+      names.append(i["name"]["common"])
+
+  names = sorted(names)
+  return names
 
 # Create Supplier 
 def createProveedor(request):
@@ -43,6 +53,7 @@ def createProveedor(request):
     )
     #socialMediaRepresentanteForm = SocialMediaFormset(queryset=SocialMedia.objects.none())
     #print(proveedorSocialMedia)
+
     context = {
       "data":{
         "empresa":empresa,
@@ -51,8 +62,10 @@ def createProveedor(request):
         "socialMedia" : proveedorSocialMedia,
         "socialMediaRepresentante": socialMediaRepresentanteForm
       },
-      "list_link":'/proveedor?empresa='+str(empresaId)
+      "list_link":'/proveedor?empresa='+str(empresaId), 
+      "paises": getCountries()
       }
+    
     return render(request,'pages/proveedor/create-update.html', context)
 
   elif request.method == 'POST':
@@ -112,7 +125,8 @@ def updateProveedor(request):
         "socialMediaRepresentante": socialMediaRepresentanteForm
       },
       "editing_social":True,
-      "list_link":'/proveedor?empresa='+str(proveedor.empresa.id)
+      "list_link":'/proveedor?empresa='+str(proveedor.empresa.id), 
+      "paises": getCountries()
     }
     
 
