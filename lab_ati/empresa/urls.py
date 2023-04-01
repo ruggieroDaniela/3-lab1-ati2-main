@@ -5,7 +5,6 @@ from . import views
 app_name = "empresa"
 
 urlpatterns = [
-    path('upload/', views.upload, name='upload'),
     path("", views.BusinessListView.as_view(), name="business-list"),
     path("create", views.CreateBusinessView.as_view(), name="create-business"),
     path("details/<slug:pk>", views.BusinessDetailsView.as_view(), name="business-details"),
