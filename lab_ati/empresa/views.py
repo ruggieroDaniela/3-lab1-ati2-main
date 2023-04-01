@@ -10,12 +10,36 @@ from django.core import exceptions
 from django.shortcuts import render
 from lab_ati.utils.social_media import add_social_media
 from django.urls import reverse
+from django.http import HttpResponse
+
+
+def cambiarNombre(request):
+    if request.method == 'POST':
+        # Obtener el nuevo nombre del POST
+        nuevo_nombre = request.POST.get('nuevo_nombre')
+        
+        # Realizar la lógica para cambiar el nombre
+        # ...
+        
+        # Enviar una respuesta exitosa
+        return HttpResponse('El nombre ha sido cambiado exitosamente')
+
 
 # Businesses Views
 class BusinessListView(ListView):
     template_name = "pages/business/list.html"
     model = Empresa
     paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        with open('lab_ati/nombre.txt', 'r') as archivo:
+            contenido = archivo.read()
+
+        
+        context['mi_variable'] = contenido
+        return context
+
 
 class BusinessDetailsView(DetailView):
     template_name = "pages/business/detail.html"
