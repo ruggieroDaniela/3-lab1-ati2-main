@@ -48,6 +48,7 @@
             value="{{data.proveedor|get_item:campo.name}}"
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
             oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
+            oninput="setCustomValidity('')"
             Required
             />
 
@@ -106,6 +107,7 @@
             value="{{data.proveedor|get_item:campo.name}}"
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
             oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
+            oninput="setCustomValidity('')"
             Required
             />            
 
