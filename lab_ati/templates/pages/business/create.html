@@ -61,18 +61,15 @@
             <section class="col input-group">
                 <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ form.email.label_tag }}</label>
                     <input 
-                        type="email"
+                        type="text"
                         class="form-control" 
                         name="{{ field.email.name }}"
-                        aria-describedby="helpId" 
                         placeholder="{{ field.email.label }}"
                         value="{{ field.email.value | default:'' }}"
                         pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-                        Required
-                    >
-                {% for error in form.email.errors %}
-                    <span class="invalid-feedback">{{ error }}</span>
-                {% endfor %}
+                        oninvalid="setCustomValidity('{% trans "Por favor introduzca una dirección de correo que sea válida" %}')"
+                        oninput="setCustomValidity('')" 
+                    />
             </section>
             <section class="col input-group">
                 <label for="{{ form.web_site.id_for_label }}" class="input-group-text">{{ form.web_site.label_tag }}</label>

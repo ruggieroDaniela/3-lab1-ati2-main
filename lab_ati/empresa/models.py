@@ -23,7 +23,7 @@ class EmpresaABC(DirABC):
 
     nombre = models.TextField(_("Nombre"))
     id_tributaria = models.TextField(_("Número de identificación tributaria"))
-    email = models.EmailField(_("Email"))
+    email = models.TextField(_("Email"))
     direccion = models.TextField(_("Dirección"))
     web_site = models.URLField(_("Sitio web"))
     servicio_proporciona = models.TextField(_("Servicio que proporciona"))
