@@ -21,7 +21,7 @@
                         aria-describedby="helpId" 
                         placeholder="{{ field.label }}"
                         value="{{ field.value | default:'' }}"
-                        pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                        pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
                         Required
                     >
                     {% for error in form.email.errors %}

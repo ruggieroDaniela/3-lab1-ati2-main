@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 01:24+0000\n"
+"POT-Creation-Date: 2023-04-03 17:37+0000\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,7 +181,7 @@ msgstr "Personal mail"
 msgid "Teléfono local"
 msgstr "Local telephone"
 
-#: lab_ati/empresa/views.py:226 lab_ati/empresa/views.py:296
+#: lab_ati/empresa/views.py:225 lab_ati/empresa/views.py:295
 msgid "La empresa no existe"
 msgstr "The company does not exist"
 
@@ -590,8 +590,12 @@ msgstr "Create a company"
 msgid "Edita la información de una empresa"
 msgstr "Edit company information"
 
-#: lab_ati/templates/pages/business/create.html:86
-#: lab_ati/templates/pages/business/create.html:104
+#: lab_ati/templates/pages/business/create.html:70
+msgid "Por favor introduzca una dirección de correo que sea válida"
+msgstr "Please enter a valid email address"
+
+#: lab_ati/templates/pages/business/create.html:91
+#: lab_ati/templates/pages/business/create.html:109
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
 msgid ""
@@ -601,7 +605,7 @@ msgstr ""
 "Valid phone number formats: +58-0212-123-1234, +58-0212-123-12-34, "
 "+5802121231234"
 
-#: lab_ati/templates/pages/business/create.html:162
+#: lab_ati/templates/pages/business/create.html:167
 #: lab_ati/templates/pages/proveedor/formAuto.html:58
 #: lab_ati/templates/pages/proveedor/formAuto.html:100
 #: lab_ati/templates/pages/proveedor/read.html:49
@@ -609,11 +613,11 @@ msgstr ""
 msgid "Redes sociales"
 msgstr "Social networks"
 
-#: lab_ati/templates/pages/business/create.html:177
+#: lab_ati/templates/pages/business/create.html:182
 msgid "Crear empresa"
-msgstr "create company"
+msgstr "Create Company"
 
-#: lab_ati/templates/pages/business/create.html:179
+#: lab_ati/templates/pages/business/create.html:184
 msgid "Editar empresa"
 msgstr "Edit company"
 
@@ -701,7 +705,7 @@ msgstr "Edit customer information"
 #: lab_ati/templates/pages/clientes/form.html:35
 #: lab_ati/templates/pages/clientes/index.html:20
 msgid "Tipo"
-msgstr "Guy"
+msgstr "Type"
 
 #: lab_ati/templates/pages/clientes/form.html:98
 #: lab_ati/templates/pages/clientes/verCliente.html:30
