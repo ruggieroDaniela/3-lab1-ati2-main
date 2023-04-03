@@ -82,7 +82,6 @@ class CreateBusinessView(CreateView):
     def form_valid(self, form):
         if not self.social_media_formset.is_valid():
             return self.form_invalid(form)
-        
         res = super().form_valid(form)
         # Add social media to Empresa
         add_social_media(self.object, self.social_media_formset)

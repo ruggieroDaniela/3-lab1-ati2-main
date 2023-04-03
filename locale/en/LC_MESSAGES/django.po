@@ -611,7 +611,7 @@ msgstr "Social networks"
 
 #: lab_ati/templates/pages/business/create.html:177
 msgid "Crear empresa"
-msgstr "create company"
+msgstr "Create Company"
 
 #: lab_ati/templates/pages/business/create.html:179
 msgid "Editar empresa"
@@ -701,7 +701,7 @@ msgstr "Edit customer information"
 #: lab_ati/templates/pages/clientes/form.html:35
 #: lab_ati/templates/pages/clientes/index.html:20
 msgid "Tipo"
-msgstr "Guy"
+msgstr "Type"
 
 #: lab_ati/templates/pages/clientes/form.html:98
 #: lab_ati/templates/pages/clientes/verCliente.html:30
