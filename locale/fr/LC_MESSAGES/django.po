@@ -2,26 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 17:06+0000\n"
+"POT-Creation-Date: 2023-04-03 01:24+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 
-#: config/settings/base.py:31
+#: config/settings/base.py:33
 msgid "Español"
 msgstr "Espagnol"
 
-#: config/settings/base.py:32
+#: config/settings/base.py:34
 msgid "Ingles"
 msgstr "Anglais"
 
-#: config/settings/base.py:33
+#: config/settings/base.py:35
 msgid "Francés"
 msgstr "Français"
 
-#: config/settings/base.py:34
+#: config/settings/base.py:36
 msgid "Aleman"
 msgstr "Allemand"
 
@@ -86,7 +86,7 @@ msgstr "À quelle fréquence souhaitez-vous rester informé ?"
 msgid "Ciudad"
 msgstr "Ville"
 
-#: lab_ati/empresa/models.py:12
+#: lab_ati/empresa/models.py:12 lab_ati/templates/pages/clientes/form.html:56
 msgid "Pais"
 msgstr "Pays"
 
@@ -181,7 +181,7 @@ msgstr "Courrier personnel"
 msgid "Teléfono local"
 msgstr "Téléphone local"
 
-#: lab_ati/empresa/views.py:214 lab_ati/empresa/views.py:281
+#: lab_ati/empresa/views.py:226 lab_ati/empresa/views.py:296
 msgid "La empresa no existe"
 msgstr "L'entreprise n'existe pas"
 
@@ -216,6 +216,10 @@ msgstr "Numéro de téléphone local du représentant"
 #: lab_ati/proveedor/models.py:16
 msgid "Pais de residencia de representante"
 msgstr "Pays de résidence du représentant"
+
+#: lab_ati/proveedor/views.py:116 lab_ati/proveedor/views.py:149
+msgid "Su cambio se ha guardado con éxito"
+msgstr "Votre modification a été enregistrée avec succès"
 
 #: lab_ati/templates/account/account_inactive.html:5
 #: lab_ati/templates/account/account_inactive.html:8
@@ -515,31 +519,58 @@ msgstr "Droits d'auteur"
 msgid "Todos los derechos reservados"
 msgstr "Tous droits réservés"
 
-#: lab_ati/templates/common/header.html:14
+#: lab_ati/templates/common/header.html:20
 msgid "Empresas"
 msgstr "Entreprises"
 
-#: lab_ati/templates/common/header.html:17
+#: lab_ati/templates/common/header.html:23
 #: lab_ati/templates/pages/business/detail.html:39
 #: lab_ati/templates/pages/business/list.html:68
 msgid "Clientes"
 msgstr "Clients"
 
-#: lab_ati/templates/common/header.html:20
+#: lab_ati/templates/common/header.html:26
 #: lab_ati/templates/pages/business/detail.html:44
 #: lab_ati/templates/pages/business/list.html:78
 msgid "Proveedores"
 msgstr "Fournisseurs"
 
-#: lab_ati/templates/common/header.html:23
+#: lab_ati/templates/common/header.html:29
 #: lab_ati/templates/pages/business/detail.html:49
 #: lab_ati/templates/pages/business/list.html:73
 msgid "Empleados"
 msgstr "Employés"
 
-#: lab_ati/templates/common/header.html:40
+#: lab_ati/templates/common/header.html:46
 msgid "Cambiar"
 msgstr "Changer"
+
+#: lab_ati/templates/common/header.html:53
+msgid "Cambiar nombre"
+msgstr "Rebaptiser"
+
+#: lab_ati/templates/common/header.html:54
+msgid "Cambiar logo"
+msgstr "Changer de logo"
+
+#: lab_ati/templates/common/header.html:68
+msgid "Modificar nombre"
+msgstr "Modifier fournisseur"
+
+#: lab_ati/templates/common/header.html:76
+msgid "Ingrese el nombre de la corporación:"
+msgstr "Entrez le nom de la société"
+
+#: lab_ati/templates/common/header.html:80
+#: lab_ati/templates/pages/business/delete.html:20
+#: lab_ati/templates/pages/employees/delete.html:20
+msgid "Cancelar"
+msgstr "Annuler"
+
+#: lab_ati/templates/common/header.html:84
+#: lab_ati/templates/pages/proveedor/formAuto.html:120
+msgid "Guardar"
+msgstr "Sauvegarder"
 
 #: lab_ati/templates/common/navigation-bar.html:6
 msgid "Atrás"
@@ -577,8 +608,8 @@ msgstr ""
 "+58-0212-123-12-34, +5802121231234"
 
 #: lab_ati/templates/pages/business/create.html:162
-#: lab_ati/templates/pages/proveedor/formAuto.html:42
-#: lab_ati/templates/pages/proveedor/formAuto.html:67
+#: lab_ati/templates/pages/proveedor/formAuto.html:58
+#: lab_ati/templates/pages/proveedor/formAuto.html:100
 #: lab_ati/templates/pages/proveedor/read.html:49
 #: lab_ati/templates/pages/proveedor/read.html:105
 msgid "Redes sociales"
@@ -604,11 +635,6 @@ msgstr "Voulez-vous supprimer l'entreprise"
 #: lab_ati/templates/pages/employees/delete.html:15
 msgid "Borrar"
 msgstr "Supprimer"
-
-#: lab_ati/templates/pages/business/delete.html:20
-#: lab_ati/templates/pages/employees/delete.html:20
-msgid "Cancelar"
-msgstr "Annuler"
 
 #: lab_ati/templates/pages/business/detail.html:7
 msgid "Información de la empresa"
@@ -683,12 +709,12 @@ msgstr "Modifier les informations client"
 msgid "Tipo"
 msgstr "Type"
 
-#: lab_ati/templates/pages/clientes/form.html:81
+#: lab_ati/templates/pages/clientes/form.html:98
 #: lab_ati/templates/pages/clientes/verCliente.html:30
 msgid "Redes Sociales"
 msgstr "Réseaux sociaux"
 
-#: lab_ati/templates/pages/clientes/form.html:95
+#: lab_ati/templates/pages/clientes/form.html:112
 msgid "Enviar"
 msgstr "Envoyer"
 
@@ -723,11 +749,11 @@ msgstr ""
 "Formats valides de numéro de carte d'identité ou de passeport : "
 "V-12.345.678, ABC123DEF4"
 
-#: lab_ati/templates/pages/employees/create.html:203
+#: lab_ati/templates/pages/employees/create.html:209
 msgid "Crear empleado"
 msgstr "Créer un employé"
 
-#: lab_ati/templates/pages/employees/create.html:205
+#: lab_ati/templates/pages/employees/create.html:211
 msgid "Editar empleado"
 msgstr "Modifier employé"
 
@@ -785,13 +811,9 @@ msgstr "Enregistrement du fournisseur pour l'entreprise"
 msgid "Información del proveedor"
 msgstr "Informations sur le fournisseur"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:45
+#: lab_ati/templates/pages/proveedor/formAuto.html:61
 msgid "Información del representante"
 msgstr "Informations sur le représentant"
-
-#: lab_ati/templates/pages/proveedor/formAuto.html:87
-msgid "Guardar"
-msgstr "Sauvegarder"
 
 #: lab_ati/templates/pages/proveedor/list.html:6
 msgid "Lista de proveedores de"

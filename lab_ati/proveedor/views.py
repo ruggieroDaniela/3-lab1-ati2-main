@@ -9,6 +9,7 @@ from django.template.defaulttags import register
 from lab_ati.empresa.models import Empresa, SocialMedia
 from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.utils.social_media import add_social_media
+from django.utils.translation import gettext_lazy as _
 import requests
 
 @register.filter
@@ -112,7 +113,7 @@ def updateProveedor(request):
     )
 
     if formularioProveedor.is_valid():
-      messages.success(request, "Su cambio se ha guardado con éxito")
+      messages.success(request, _("Su cambio se ha guardado con éxito"))
 
     context = {
       "business_id": proveedor.empresa.id,
@@ -145,7 +146,7 @@ def updateProveedor(request):
     empresaId = str(oldProveedor.empresa.id)
     if formularioProveedor.is_valid():
       print('is valid!')
-      messages.success(request, "Su cambio se ha guardado con éxito")
+      messages.success(request, _("Su cambio se ha guardado con éxito"))
       proveedorSaved = formularioProveedor.save()
       social_media_formset = SocialMediaFormset(
         prefix="proveedorSocial",
