@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 01:08+0000\n"
+"POT-Creation-Date: 2023-04-03 01:24+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -553,6 +553,25 @@ msgstr "Rebaptiser"
 msgid "Cambiar logo"
 msgstr "Changer de logo"
 
+#: lab_ati/templates/common/header.html:68
+msgid "Modificar nombre"
+msgstr "Modifier fournisseur"
+
+#: lab_ati/templates/common/header.html:76
+msgid "Ingrese el nombre de la corporación:"
+msgstr "Entrez le nom de la société"
+
+#: lab_ati/templates/common/header.html:80
+#: lab_ati/templates/pages/business/delete.html:20
+#: lab_ati/templates/pages/employees/delete.html:20
+msgid "Cancelar"
+msgstr "Annuler"
+
+#: lab_ati/templates/common/header.html:84
+#: lab_ati/templates/pages/proveedor/formAuto.html:120
+msgid "Guardar"
+msgstr "Sauvegarder"
+
 #: lab_ati/templates/common/navigation-bar.html:6
 msgid "Atrás"
 msgstr "Derrière"
@@ -616,11 +635,6 @@ msgstr "Voulez-vous supprimer l'entreprise"
 #: lab_ati/templates/pages/employees/delete.html:15
 msgid "Borrar"
 msgstr "Supprimer"
-
-#: lab_ati/templates/pages/business/delete.html:20
-#: lab_ati/templates/pages/employees/delete.html:20
-msgid "Cancelar"
-msgstr "Annuler"
 
 #: lab_ati/templates/pages/business/detail.html:7
 msgid "Información de la empresa"
@@ -800,10 +814,6 @@ msgstr "Informations sur le fournisseur"
 #: lab_ati/templates/pages/proveedor/formAuto.html:61
 msgid "Información del representante"
 msgstr "Informations sur le représentant"
-
-#: lab_ati/templates/pages/proveedor/formAuto.html:120
-msgid "Guardar"
-msgstr "Sauvegarder"
 
 #: lab_ati/templates/pages/proveedor/list.html:6
 msgid "Lista de proveedores de"

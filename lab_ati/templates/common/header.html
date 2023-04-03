@@ -65,7 +65,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex justify-content-between">
-        <h5 class="modal-title" id="modify-modal-title">Modificar nombre</h5>
+        <h5 class="modal-title" id="modify-modal-title">{% trans "Modificar nombre" %}</h5>
         <button type="button" class="close float-end" data-dismiss="modal" aria-label="Close">
           &times;
         </button>
@@ -73,15 +73,15 @@
       <form action="cambiar-nombre" method="post">
         {% csrf_token %}
         <div class="modal-body">
-          <label for="new-value">Ingrese el nombre de la corporación:</label>
+          <label for="new-value">{% trans "Ingrese el nombre de la corporación:" %}</label>
           <input type="text" class="form-control" id="new-value" name="new-value" required>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancelar" %}</button>
           
 
             
-            <input type="submit" class="btn btn-primary" onclick="$('#modal_id').modal('hide');" value="Guardar Cambios" >
+            <input type="submit" class="btn btn-primary" onclick="$('#modal_id').modal('hide');" value={% trans "Guardar"%} >
       </form>
       
       </div>
