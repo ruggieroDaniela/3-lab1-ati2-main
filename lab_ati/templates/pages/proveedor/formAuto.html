@@ -38,15 +38,32 @@
             {% endfor %}
           </select>
         {% else %}
-        <!--Otro-->
-        <input id="input_info"
-        type="{{campo.field.widget.input_type}}"
-        class="form-control"
-        name="{{campo.name}}"
-        placeholder="{{campo.label}}"
-        value="{{data.proveedor|get_item:campo.name}}"
-        Required
-        />
+          <!--Correo electronico-->
+          {% if campo.name == 'email' %}
+            <input id="email_proveedor"
+            type="{{campo.field.widget.input_type}}"
+            class="form-control"
+            name="{{campo.name}}"
+            placeholder="{{campo.label}}"
+            value="{{data.proveedor|get_item:campo.name}}"
+            pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
+            oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
+            oninput="setCustomValidity('')"
+            Required
+            />
+
+            
+          {% else %}
+            <!--Otro-->
+            <input id="input_info"
+            type="{{campo.field.widget.input_type}}"
+            class="form-control"
+            name="{{campo.name}}"
+            placeholder="{{campo.label}}"
+            value="{{data.proveedor|get_item:campo.name}}"
+            Required
+            />
+          {% endif %}
         {% endif %}        
       </section>
     </section>
@@ -80,16 +97,31 @@
             {% endfor %}
           </select>
         {% else %}
+          <!--Correo electrónico-->
+          {% if campo.name == 'email_representante' or campo.name == 'email_personal_representante' %}
+            <input id="email_representante"
+            type="{{campo.field.widget.input_type}}"
+            class="form-control"
+            name="{{campo.name}}"
+            placeholder="{{campo.label}}"
+            value="{{data.proveedor|get_item:campo.name}}"
+            pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
+            oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
+            oninput="setCustomValidity('')"
+            Required
+            />            
 
-
-        <input id="representante"
-        type="{{campo.field.widget.input_type}}"
-        class="form-control"
-        name="{{campo.name}}"
-        placeholder="{{campo.label}}"
-        value="{{data.proveedor|get_item:campo.name}}"
-        Required
-        />
+          {% else %}
+            <!--Otro-->
+            <input id="representante"
+            type="{{campo.field.widget.input_type}}"
+            class="form-control"
+            name="{{campo.name}}"
+            placeholder="{{campo.label}}"
+            value="{{data.proveedor|get_item:campo.name}}"
+            Required
+            />
+          {% endif %}
         {% endif %}
       </section>
     </section>
@@ -120,5 +152,6 @@
     <button id="save_supplier" class="btn btn-primary" type="submit">{% trans "Guardar" %}</button>
   </div>
 
+  
   
 </form>
