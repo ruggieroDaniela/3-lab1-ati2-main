@@ -41,7 +41,7 @@ def createProveedor(request):
     except ObjectDoesNotExist:
       return render(request,'404.html')
     
-    formularioProveedor = ProveedorForm(request.GET)
+    formularioProveedor = ProveedorForm()
     context = {}
     proveedorSocialMedia = SocialMediaFormset(
         prefix="proveedorSocial",
