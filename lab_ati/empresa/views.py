@@ -103,6 +103,10 @@ class CreateBusinessView(CreateView):
 
         # Queryset vacio porque vamos a crear una empresa nuevo
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
+        
+        # Countries
+        context["paises"] = getCountries()
+        
         return context
 
 class EditBusinessView(UpdateView):
@@ -161,6 +165,9 @@ class EditBusinessView(UpdateView):
 
         #Header
         context["list_link"] = "/business"
+
+        # Countries
+        context["paises"] = getCountries()
         return context
 
 class DeleteBusinessView(DeleteView):

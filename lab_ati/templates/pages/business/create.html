@@ -33,7 +33,12 @@
         <section class="row">
             <section class="col input-group">
                 <label for="{{ form.pais.id_for_label }}" class="input-group-text">{{ form.pais.label_tag }}</label>
-                {{ form.pais }}
+                <!--Pais-->
+                <select type="text" name="pais" required class="form-select" id="id_pais" value="{{ form.pais.value }}">
+                    {% for i in paises %}
+                        <option value='{{i}}' {% if form.pais.value == i %} selected {% endif %} > {{i}} </option>              
+                    {% endfor %}
+                </select> 
                 {% for error in form.pais.errors %}
                     <span class="invalid-feedback">{{ error }}</span>
                 {% endfor %}
