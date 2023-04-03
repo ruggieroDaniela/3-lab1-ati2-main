@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 00:48+0000\n"
+"POT-Creation-Date: 2023-04-03 01:08+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -216,6 +216,10 @@ msgstr "Numéro de téléphone local du représentant"
 #: lab_ati/proveedor/models.py:16
 msgid "Pais de residencia de representante"
 msgstr "Pays de résidence du représentant"
+
+#: lab_ati/proveedor/views.py:116 lab_ati/proveedor/views.py:149
+msgid "Su cambio se ha guardado con éxito"
+msgstr "Votre modification a été enregistrée avec succès"
 
 #: lab_ati/templates/account/account_inactive.html:5
 #: lab_ati/templates/account/account_inactive.html:8

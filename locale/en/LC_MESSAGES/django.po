@@ -1,11 +1,13 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: PO\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-03 01:08+0000\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: PO\n"
-"Language: en\n"
 
 #: config/settings/base.py:33
 msgid "Español"
@@ -215,6 +217,10 @@ msgstr "Representative's local telephone number"
 msgid "Pais de residencia de representante"
 msgstr "Country of residence of representative"
 
+#: lab_ati/proveedor/views.py:116 lab_ati/proveedor/views.py:149
+msgid "Su cambio se ha guardado con éxito"
+msgstr "Your change has been saved successfully"
+
 #: lab_ati/templates/account/account_inactive.html:5
 #: lab_ati/templates/account/account_inactive.html:8
 msgid "Account Inactive"
@@ -265,8 +271,12 @@ msgid "Warning:"
 msgstr "Notice:"
 
 #: lab_ati/templates/account/email.html:46
-msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
 
 #: lab_ati/templates/account/email.html:51
 msgid "Add E-mail Address"
@@ -286,16 +296,26 @@ msgid "Confirm E-mail Address"
 msgstr "Confirm Email Address"
 
 #: lab_ati/templates/account/email_confirm.html:16
-msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
 
 #: lab_ati/templates/account/email_confirm.html:20
 msgid "Confirm"
 msgstr "Confirm"
 
 #: lab_ati/templates/account/email_confirm.html:27
-msgid "This e-mail confirmation link expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
-msgstr "This e-mail confirmation link has expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"This e-mail confirmation link has expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 
 #: lab_ati/templates/account/login.html:7
 #: lab_ati/templates/account/login.html:11
@@ -308,16 +328,26 @@ msgid "Please sign in with one of your existing third party accounts:"
 msgstr "Please sign in with one of your existing third party accounts:"
 
 #: lab_ati/templates/account/login.html:19
-msgid "Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and sign in below:"
-msgstr "Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and sign in below:"
+#, python-format
+msgid ""
+"Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and "
+"sign in below:"
+msgstr ""
+"Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and "
+"sign in below:"
 
 #: lab_ati/templates/account/login.html:32
 msgid "or"
 msgstr "or"
 
 #: lab_ati/templates/account/login.html:41
-msgid "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
-msgstr "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
+#, python-format
+msgid ""
+"If you have not created an account yet, then please <a href=\"%(signup_url)s"
+"\">sign up</a> first."
+msgstr ""
+"If you have not created an account yet, then please <a href=\"%(signup_url)s"
+"\">sign up</a> first."
 
 #: lab_ati/templates/account/login.html:55
 msgid "Forgot Password?"
@@ -351,8 +381,12 @@ msgid "Password Reset"
 msgstr "Password Reset"
 
 #: lab_ati/templates/account/password_reset.html:16
-msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
 
 #: lab_ati/templates/account/password_reset.html:21
 msgid "Reset My Password"
@@ -363,16 +397,27 @@ msgid "Please contact us if you have any trouble resetting your password."
 msgstr "Please contact us if you have any trouble resetting your password."
 
 #: lab_ati/templates/account/password_reset_done.html:15
-msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr "We have sent you an email. Please contact us if you do not receive it within a few minutes."
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"We have sent you an email. Please contact us if you do not receive it within "
+"a few minutes."
 
 #: lab_ati/templates/account/password_reset_from_key.html:8
 msgid "Bad Token"
 msgstr "Bad Token"
 
 #: lab_ati/templates/account/password_reset_from_key.html:12
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
-msgstr "The password reset link was invalid, possibly because it has already been used. Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
 
 #: lab_ati/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -399,8 +444,11 @@ msgid "Sign Up"
 msgstr "Sign up"
 
 #: lab_ati/templates/account/signup.html:11
-msgid "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
-msgstr "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 
 #: lab_ati/templates/account/signup_closed.html:5
 #: lab_ati/templates/account/signup_closed.html:8
@@ -419,28 +467,43 @@ msgid "Verify Your E-mail Address"
 msgstr "Verify Your Email Address"
 
 #: lab_ati/templates/account/verification_sent.html:10
-msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr "We have sent an email to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"We have sent an email to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
 
 #: lab_ati/templates/account/verified_email_required.html:12
-msgid "This part of the site requires us to verify that\n"
+msgid ""
+"This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
-msgstr "This part of the site requires us to verify that\n"
+msgstr ""
+"This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your email address. "
 
 #: lab_ati/templates/account/verified_email_required.html:16
-msgid "We have sent an e-mail to you for\n"
+msgid ""
+"We have sent an e-mail to you for\n"
 "verification. Please click on the link inside this e-mail. Please\n"
 "contact us if you do not receive it within a few minutes."
-msgstr "We have sent an email to you for\n"
+msgstr ""
+"We have sent an email to you for\n"
 "verification. Please click on the link inside this email. por favor\n"
 "Contact us if you do not receive it within a few minutes."
 
 #: lab_ati/templates/account/verified_email_required.html:20
-msgid "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
-msgstr "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
 
 #: lab_ati/templates/common/footer.html:8
 msgid "Copyright"
@@ -498,7 +561,7 @@ msgstr "Social network"
 
 #: lab_ati/templates/common/social_media_form.html:23
 msgid "Valor"
-msgstr "Worth"
+msgstr "Value"
 
 #: lab_ati/templates/pages/business/create.html:9
 msgid "Crea una empresa"
@@ -512,8 +575,12 @@ msgstr "Edit company information"
 #: lab_ati/templates/pages/business/create.html:104
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
-msgid "Formatos válidos de número de teléfono: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234"
-msgstr "Valid phone number formats: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234"
+msgid ""
+"Formatos válidos de número de teléfono: +58-0212-123-1234, "
+"+58-0212-123-12-34, +5802121231234"
+msgstr ""
+"Valid phone number formats: +58-0212-123-1234, +58-0212-123-12-34, "
+"+5802121231234"
 
 #: lab_ati/templates/pages/business/create.html:162
 #: lab_ati/templates/pages/proveedor/formAuto.html:58
@@ -656,7 +723,8 @@ msgid "Edita la información de un empleado"
 msgstr "Edit an employee's information"
 
 #: lab_ati/templates/pages/employees/create.html:64
-msgid "Formatos válidos de número de cédula o pasaporte: V-12.345.678, ABC123DEF4"
+msgid ""
+"Formatos válidos de número de cédula o pasaporte: V-12.345.678, ABC123DEF4"
 msgstr "Valid ID or passport number formats: V-12.345.678, ABC123DEF4"
 
 #: lab_ati/templates/pages/employees/create.html:209
@@ -727,7 +795,7 @@ msgstr "Representative Information"
 
 #: lab_ati/templates/pages/proveedor/formAuto.html:120
 msgid "Guardar"
-msgstr "Keep"
+msgstr "Save"
 
 #: lab_ati/templates/pages/proveedor/list.html:6
 msgid "Lista de proveedores de"
@@ -797,4 +865,3 @@ msgstr "Name of User"
 #: lab_ati/users/views.py:25
 msgid "Information successfully updated"
 msgstr "Information successfully updated"
-
