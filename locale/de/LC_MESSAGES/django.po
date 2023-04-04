@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 17:37+0000\n"
+"POT-Creation-Date: 2023-04-04 23:03+0000\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,7 +181,7 @@ msgstr "Persönliche Post"
 msgid "Teléfono local"
 msgstr "Lokales Telefon"
 
-#: lab_ati/empresa/views.py:225 lab_ati/empresa/views.py:295
+#: lab_ati/empresa/views.py:232 lab_ati/empresa/views.py:302
 msgid "La empresa no existe"
 msgstr "Das Unternehmen existiert nicht"
 
@@ -567,7 +567,7 @@ msgid "Cancelar"
 msgstr "Stornieren"
 
 #: lab_ati/templates/common/header.html:84
-#: lab_ati/templates/pages/proveedor/formAuto.html:120
+#: lab_ati/templates/pages/proveedor/formAuto.html:157
 msgid "Guardar"
 msgstr "Halten"
 
@@ -595,12 +595,12 @@ msgstr "Erstellen Sie ein Unternehmen"
 msgid "Edita la información de una empresa"
 msgstr "Firmeninformationen bearbeiten"
 
-#: lab_ati/templates/pages/business/create.html:70
+#: lab_ati/templates/pages/business/create.html:74
 msgid "Por favor introduzca una dirección de correo que sea válida"
 msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein"
 
-#: lab_ati/templates/pages/business/create.html:91
-#: lab_ati/templates/pages/business/create.html:109
+#: lab_ati/templates/pages/business/create.html:97
+#: lab_ati/templates/pages/business/create.html:115
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
 msgid ""
@@ -610,19 +610,19 @@ msgstr ""
 "Gültige Telefonnummernformate: +58-0212-123-1234, +58-0212-123-12-34, "
 "+5802121231234"
 
-#: lab_ati/templates/pages/business/create.html:167
-#: lab_ati/templates/pages/proveedor/formAuto.html:58
-#: lab_ati/templates/pages/proveedor/formAuto.html:100
+#: lab_ati/templates/pages/business/create.html:173
+#: lab_ati/templates/pages/proveedor/formAuto.html:73
+#: lab_ati/templates/pages/proveedor/formAuto.html:137
 #: lab_ati/templates/pages/proveedor/read.html:49
-#: lab_ati/templates/pages/proveedor/read.html:105
+#: lab_ati/templates/pages/proveedor/read.html:109
 msgid "Redes sociales"
 msgstr "Soziale Netzwerke"
 
-#: lab_ati/templates/pages/business/create.html:182
+#: lab_ati/templates/pages/business/create.html:188
 msgid "Crear empresa"
 msgstr "Unternehmen erstellen"
 
-#: lab_ati/templates/pages/business/create.html:184
+#: lab_ati/templates/pages/business/create.html:190
 msgid "Editar empresa"
 msgstr "Unternehmen bearbeiten"
 
@@ -670,13 +670,13 @@ msgstr "Kurse von Interesse"
 
 #: lab_ati/templates/pages/business/detail.html:29
 #: lab_ati/templates/pages/employees/detail.html:23
-#: lab_ati/templates/pages/proveedor/read.html:125
+#: lab_ati/templates/pages/proveedor/read.html:129
 msgid "Editar"
 msgstr "Bearbeiten"
 
 #: lab_ati/templates/pages/business/detail.html:34
 #: lab_ati/templates/pages/employees/detail.html:28
-#: lab_ati/templates/pages/proveedor/read.html:130
+#: lab_ati/templates/pages/proveedor/read.html:134
 msgid "Eliminar"
 msgstr "Beseitigen"
 
@@ -812,7 +812,7 @@ msgstr "Lieferantenregistrierung für Unternehmen"
 msgid "Información del proveedor"
 msgstr "Anbieterinformationen"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:61
+#: lab_ati/templates/pages/proveedor/formAuto.html:76
 msgid "Información del representante"
 msgstr "Repräsentative Informationen"
 
@@ -854,6 +854,10 @@ msgid "Correo electrónico personal"
 msgstr "Persönliche E-Mail"
 
 #: lab_ati/templates/pages/proveedor/read.html:96
+msgid "No tiene"
+msgstr "Hat nicht"
+
+#: lab_ati/templates/pages/proveedor/read.html:100
 msgid "País de residencia"
 msgstr "Aufenthaltsland"
 
