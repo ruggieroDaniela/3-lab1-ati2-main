@@ -23,7 +23,33 @@
             {% if object.cliente_empresa %}
                 <p class="card-text"> {% trans 'Cliente de empresa' %}: {{ object.cliente_empresa }}</p>
             {% endif %}
-            <section class="d-flex justify-content-center">
+
+            {% if object.redes_sociales.all %}
+                <div class="row">
+                    <div class="col input-group">
+                        <h5>{% trans "Redes Sociales" %}</h5>
+                        <ul class="list-group list-group w-100" id="socialNetworkList" ></ul>
+                    </div>
+                </div>
+                {% for social_media in object.redes_sociales.all %}
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label">{{ social_media.nombre }}:</label>
+                        <input 
+                            type="{{ field.field.widget.input_type }}"
+                            class="form-control" 
+                            name="{{ field.name }}"
+                            aria-describedby="helpId" 
+                            placeholder="{{ field.label }}"
+                            value="{{ social_media.valor }}"
+                            disabled
+                        > 
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+            <section class="d-flex justify-content-center pt-4">
                 <a href="{% url 'empresa:edit-business' pk=object.id %}">
                     <button class="btn btn-primary">
                         {% trans 'Editar' %}
