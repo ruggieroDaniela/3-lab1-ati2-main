@@ -11,88 +11,94 @@
         {% endif %}
             <div class="col input-group">
 
-                {% if field.name == 'personal_email' %}
+            {% if field.name == 'personal_email' %}
+                <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ field.label }}</label>
+                <input 
+                    type="{{ field.widget.input_type }}"
+                    class="form-control" 
+                    name="{{ field.name }}"
+                    aria-describedby="helpId" 
+                    placeholder="{{ field.label }}"
+                    value="{{ field.value | default:'' }}"
+                    pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
+                    Required
+                >
+                {% for error in form.email.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+                
+            {% elif field.name == 'tipo' %}
+                <label class="input-group-text">{% trans "Tipo" %}</label>
+                <select 
+                    class="form-select" 
+                    aria-label="Default select example"
+                    name="{{ field.name }}"
+                    placeholder="{{ field.label }}" 
+                    value="{{ field.value | default:'' }}"
+                >
+                    <option value="LE" {% if field.value == 'LE' %} selected {% endif %}>
+                        <h5>{% trans "Labora empresa" %}</h5>
+                    </option>
+                    <option value="SO" {% if field.value == 'SO' %} selected {% endif %}>
+                        <h5>{% trans "Estudiante" %}</h5>
+                    </option>
+                    <option value="JR" {% if field.value == 'JR' %} selected {% endif %}>
+                        <h5>{% trans "Otro" %}</h5>
+                    </option>
+                </select>
+            {% elif field.name == 'pais' %}                        
+                <!--Pais-->
+                <label class="input-group-text">{% trans "Pais" %}</label>
+                <select 
+                    class="form-select" 
+                    aria-label="Default select example"
+                    name="{{ field.name }}"
+                    placeholder="{{ field.label }}" 
+                    value="{{ field.value | default:'' }}">
                     
-                    <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ field.label }}</label>
-                    <input 
-                        type="{{ field.widget.input_type }}"
-                        class="form-control" 
-                        name="{{ field.name }}"
-                        aria-describedby="helpId" 
-                        placeholder="{{ field.label }}"
-                        value="{{ field.value | default:'' }}"
-                        pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-                        Required
-                    >
-                    {% for error in form.email.errors %}
-                        <span class="invalid-feedback">{{ error }}</span>
+                    {% for i in paises %}
+                        <option value='{{i}}' {% if field.value ==  i  %} selected {% endif %}>{{i}} </option>
                     {% endfor %}
                     
-                {% else %}
-
-
-                    {% if field.name == 'tipo' %}
-                        <label class="input-group-text">{% trans "Tipo" %}</label>
-                        <select 
-                            class="form-select" 
-                            aria-label="Default select example"
-                            name="{{ field.name }}"
-                            placeholder="{{ field.label }}" 
-                            value="{{ field.value | default:'' }}"
-                        >
-                            <option value="LE" {% if field.value == 'LE' %} selected {% endif %}>
-                                <h5>{% trans "Labora empresa" %}</h5>
-                            </option>
-                            <option value="SO" {% if field.value == 'SO' %} selected {% endif %}>
-                                <h5>{% trans "Estudiante" %}</h5>
-                            </option>
-                            <option value="JR" {% if field.value == 'JR' %} selected {% endif %}>
-                                <h5>{% trans "Otro" %}</h5>
-                            </option>
-                        </select>
-                    {% else %}                        
-                        <!--Pais-->
-                        {% if field.name == 'pais' %}
-                            <label class="input-group-text">{% trans "Pais" %}</label>
-                            <select 
-                                class="form-select" 
-                                aria-label="Default select example"
-                                name="{{ field.name }}"
-                                placeholder="{{ field.label }}" 
-                                value="{{ field.value | default:'' }}">
-                                
-                                {% for i in paises %}
-                                    <option value='{{i}}' {% if field.value ==  i  %} selected {% endif %}>{{i}} </option>
-                                {% endfor %}
-                                
-                            </select>
-                        {% else %}                        
-                        <label class="input-group-text" name={{field.name}}>{{ field.label }}</label>
-                        <input 
-                            type="{{ field.widget.input_type }}"
-                            class="form-control" 
-                            name="{{ field.name }}"
-                            aria-describedby="helpId" 
-                            placeholder="{{ field.label }}"
-                            {% if field.name == 'empresa' %}
-                                value="{{ business_id }}"
-                            {% else %}
-                                value="{{ field.value | default:'' }}"
-                            {% endif %}
-                            Required
-                        >
-                        {% endif %}
+                </select>
+            {% elif field.name == 'tlf_celular' or field.name == 'whatsapp' %}                        
+                <!--Phones-->
+                <label class="input-group-text" name={{field.name}}>{{ field.label }}</label>
+                <input 
+                    type="{{ field.widget.input_type }}"
+                    class="form-control" 
+                    name="{{ field.name }}"
+                    aria-describedby="helpId" 
+                    placeholder="{{ field.label }}"
+                >
+            {% else %}                        
+                <label class="input-group-text" name={{field.name}}>{{ field.label }}</label>
+                <input 
+                    type="{{ field.widget.input_type }}"
+                    class="form-control" 
+                    name="{{ field.name }}"
+                    aria-describedby="helpId" 
+                    placeholder="{{ field.label }}"
+                    {% if field.name == 'empresa' %}
+                        value="{{ business_id }}"
+                    {% else %}
+                        value="{{ field.value | default:'' }}"
                     {% endif %}
-                {% endif %}
-                <span class="text-danger text-xs mx-2">
-                    {{ field.errors }}
-                </span>
-            </div>
-
-            
-            </div>
+                    Required
+                >
+            {% endif %}
+            <span class="text-danger text-xs mx-2">
+                {{ field.errors }}
+            </span>
+        </div>
+        </div>
         {% endfor %}
     </div>
+    {% if form.non_field_errors %}
+    <span class="text-danger text-xs mx-2">
+        {{form.non_field_errors}}
+    </span>
+    {% endif %}
     <div class="row">
         <div class="col input-group">
             <h5>{% trans "Redes Sociales" %}</h5>
