@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-05 19:21+0000\n"
+"POT-Creation-Date: 2023-04-04 23:03+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -568,7 +568,7 @@ msgid "Cancelar"
 msgstr "Annuler"
 
 #: lab_ati/templates/common/header.html:84
-#: lab_ati/templates/pages/proveedor/formAuto.html:161
+#: lab_ati/templates/pages/proveedor/formAuto.html:157
 msgid "Guardar"
 msgstr "Sauvegarder"
 
@@ -596,8 +596,12 @@ msgstr "Créer une entreprise"
 msgid "Edita la información de una empresa"
 msgstr "Modifier les informations de l'entreprise"
 
-#: lab_ati/templates/pages/business/create.html:91
-#: lab_ati/templates/pages/business/create.html:109
+#: lab_ati/templates/pages/business/create.html:74
+msgid "Por favor introduzca una dirección de correo que sea válida"
+msgstr "Sil vous plaît, mettez une adresse email valide"
+
+#: lab_ati/templates/pages/business/create.html:97
+#: lab_ati/templates/pages/business/create.html:115
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
 msgid ""
@@ -607,9 +611,9 @@ msgstr ""
 "Formats de numéros de téléphone valides : +58-0212-123-1234, "
 "+58-0212-123-12-34, +5802121231234"
 
-#: lab_ati/templates/pages/business/create.html:167
-#: lab_ati/templates/pages/proveedor/formAuto.html:79
-#: lab_ati/templates/pages/proveedor/formAuto.html:141
+#: lab_ati/templates/pages/business/create.html:173
+#: lab_ati/templates/pages/proveedor/formAuto.html:73
+#: lab_ati/templates/pages/proveedor/formAuto.html:137
 #: lab_ati/templates/pages/proveedor/read.html:49
 #: lab_ati/templates/pages/proveedor/read.html:109
 msgid "Redes sociales"
@@ -792,7 +796,7 @@ msgstr "Gérer les employés"
 
 #: lab_ati/templates/pages/employees/list.html:24
 msgid "ID"
-msgstr "Identifiant"
+msgstr "IDENTIFIANT"
 
 #: lab_ati/templates/pages/employees/list.html:30
 msgid "Cedula de identidad o pasaporte"
@@ -811,7 +815,7 @@ msgstr "Enregistrement du fournisseur pour l'entreprise"
 msgid "Información del proveedor"
 msgstr "Informations sur le fournisseur"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:82
+#: lab_ati/templates/pages/proveedor/formAuto.html:76
 msgid "Información del representante"
 msgstr "Informations sur le représentant"
 
@@ -887,6 +891,3 @@ msgstr "Nom de l'utilisateur"
 #: lab_ati/users/views.py:25
 msgid "Information successfully updated"
 msgstr "Informations mises à jour avec succès"
-
-#~ msgid "Por favor introduzca una dirección de correo que sea válida"
-#~ msgstr "Sil vous plaît, mettez une adresse email valide"

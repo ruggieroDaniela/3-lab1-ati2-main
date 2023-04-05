@@ -36,11 +36,7 @@ class CreateBusinessForm(forms.ModelForm):
             if isinstance(field.widget, forms.widgets.Select):
                 field.widget.attrs.update({
                     "class": "form-select",
-                }) 
-        
-        self.fields['email'].widget.attrs.update({
-            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
-        })  
+                })   
 
     class Meta:
         model = Empresa
@@ -76,14 +72,6 @@ class CreateEmployeeForm(forms.ModelForm):
                     "id":"modalidad",
                 })   
 
-        self.fields['email_emp'].widget.attrs.update({
-            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
-        })  
-        
-        self.fields['email_p'].widget.attrs.update({
-            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
-        })  
-        
     class Meta:
         model = Empleado
         fields = "__all__"

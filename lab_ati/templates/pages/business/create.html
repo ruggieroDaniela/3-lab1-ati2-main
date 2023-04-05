@@ -65,10 +65,16 @@
         <section class="row">
             <section class="col input-group">
                 <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ form.email.label_tag }}</label>
-                    {{ form.email }}
-                    {% for error in form.email.errors %}
-                        <span class="invalid-feedback">{{ error }}</span>
-                    {% endfor %}
+                    <input 
+                        type="text"
+                        class="form-control" 
+                        name="{{ form.email.name }}"
+                        value="{{ form.email.value | default:'' }}"
+                        pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
+                        oninvalid="setCustomValidity('{% trans "Por favor introduzca una dirección de correo que sea válida" %}')"
+                        oninput="setCustomValidity('')" 
+                        required
+                    />
             </section>
             <section class="col input-group">
                 <label for="{{ form.web_site.id_for_label }}" class="input-group-text">{{ form.web_site.label_tag }}</label>
