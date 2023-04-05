@@ -84,9 +84,23 @@
                         {% endif %}
                     {% endif %}
                 {% endif %}
-                <span class="text-danger text-xs mx-2">
-                    {{ field.errors }}
-                </span>
+                <section class="d-flex flex-column">
+                    <!--Teléfonos -->
+                    {% if field.name == 'tlf_celular' or field.name == 'whatsapp' %}
+                        <span class="text-info text-xs">
+                            <i class="bi bi-info-circle"></i>
+                            {% trans 'Formatos válidos: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234, 58-0212-123-1234' %}
+                        </span>
+                    {% endif %}
+
+                    <!--Errores -->
+                    {% for error in field.errors %}
+                        <span class="text-danger text-xs">
+                            <i class="bi bi-exclamation-octagon"></i>
+                            {{ error }}
+                        </span>
+                    {% endfor %}                  
+                </section>
             </div>
 
             
