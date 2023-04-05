@@ -90,7 +90,11 @@
         </tr>
         <tr>
           <td>{% trans 'Teléfono local' %}</td>
-          <td>{{proveedor.tlf_local}}</td>
+          {% if proveedor.tlf_local %}
+            <td>{{proveedor.tlf_local}}</td>
+          {% else %}
+            <td style="color: red; text-decoration: underline;" > {% trans 'No tiene' %} </td>
+          {%endif%}
         </tr>
         <tr>
           <td>{% trans 'País de residencia' %}</td>

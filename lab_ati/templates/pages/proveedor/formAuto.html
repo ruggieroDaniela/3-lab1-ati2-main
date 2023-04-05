@@ -50,13 +50,13 @@
             Required
             />
           {% elif campo.name == 'tlf_local' %}
-            <input id="representante"
-              type="{{campo.field.widget.input_type}}"
-              class="form-control"
-              name="{{campo.field}}"
-              placeholder="{{campo.label}}"
-              value="{{data.proveedor|get_item:campo.name}}"
-            />
+          <input id="representante"
+            type="{{campo.field.widget.input_type}}"
+            class="form-control"
+            name="{{campo.field}}"
+            placeholder="{{campo.label}}"
+            value="{{data.proveedor|get_item:campo.name}}"
+          />
           {% else %}
             <!--Otro-->
             <input id="input_info"
@@ -112,14 +112,7 @@
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
             Required
             />            
-            {% elif campo.name == 'tlf_local' %}
-            <input id="representante"
-              type="{{campo.field.widget.input_type}}"
-              class="form-control"
-              name="{{campo.field}}"
-              placeholder="{{campo.label}}"
-              value="{{data.proveedor|get_item:campo.name}}"
-            />
+
           {% else %}
             <!--Otro-->
             <input id="representante"

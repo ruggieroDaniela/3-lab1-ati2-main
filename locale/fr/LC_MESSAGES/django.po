@@ -611,15 +611,15 @@ msgstr ""
 #: lab_ati/templates/pages/proveedor/formAuto.html:79
 #: lab_ati/templates/pages/proveedor/formAuto.html:141
 #: lab_ati/templates/pages/proveedor/read.html:49
-#: lab_ati/templates/pages/proveedor/read.html:105
+#: lab_ati/templates/pages/proveedor/read.html:109
 msgid "Redes sociales"
 msgstr "Réseaux sociaux"
 
-#: lab_ati/templates/pages/business/create.html:182
+#: lab_ati/templates/pages/business/create.html:188
 msgid "Crear empresa"
 msgstr "Créer une entreprise"
 
-#: lab_ati/templates/pages/business/create.html:184
+#: lab_ati/templates/pages/business/create.html:190
 msgid "Editar empresa"
 msgstr "Modifier l'entreprise"
 
@@ -667,13 +667,13 @@ msgstr "Cours d'intérêt"
 
 #: lab_ati/templates/pages/business/detail.html:29
 #: lab_ati/templates/pages/employees/detail.html:23
-#: lab_ati/templates/pages/proveedor/read.html:125
+#: lab_ati/templates/pages/proveedor/read.html:129
 msgid "Editar"
 msgstr "Modifier"
 
 #: lab_ati/templates/pages/business/detail.html:34
 #: lab_ati/templates/pages/employees/detail.html:28
-#: lab_ati/templates/pages/proveedor/read.html:130
+#: lab_ati/templates/pages/proveedor/read.html:134
 msgid "Eliminar"
 msgstr "Éliminer"
 
@@ -853,6 +853,10 @@ msgid "Correo electrónico personal"
 msgstr "Email personnel"
 
 #: lab_ati/templates/pages/proveedor/read.html:96
+msgid "No tiene"
+msgstr "Il n'a pas"
+
+#: lab_ati/templates/pages/proveedor/read.html:100
 msgid "País de residencia"
 msgstr "Pays de residence"
 
