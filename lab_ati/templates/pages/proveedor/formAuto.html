@@ -39,7 +39,7 @@
           </select>
         {% else %}
           <!--Correo electronico-->
-          {% if campo.name == 'email' %}
+          {% if campo.name == 'email' or campo.name == 'email_representante' or campo.name == 'email_personal_representante' %}
             <input id="email_proveedor"
             type="{{campo.field.widget.input_type}}"
             class="form-control"
@@ -47,8 +47,6 @@
             placeholder="{{campo.label}}"
             value="{{data.proveedor|get_item:campo.name}}"
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-            oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
-            oninput="setCustomValidity('')"
             Required
             />
           {% elif campo.name == 'tlf_local' %}
@@ -112,18 +110,9 @@
             placeholder="{{campo.label}}"
             value="{{data.proveedor|get_item:campo.name}}"
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-            oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
-            oninput="setCustomValidity('')"
             Required
             />            
-          {% elif campo.name == 'tlf_local' %}
-          <input id="representante"
-            type="{{campo.field.widget.input_type}}"
-            class="form-control"
-            name="{{campo.field}}"
-            placeholder="{{campo.label}}"
-            value="{{data.proveedor|get_item:campo.name}}"
-          />
+
           {% else %}
             <!--Otro-->
             <input id="representante"
