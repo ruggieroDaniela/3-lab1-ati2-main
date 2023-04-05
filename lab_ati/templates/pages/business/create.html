@@ -71,8 +71,6 @@
                         name="{{ form.email.name }}"
                         value="{{ form.email.value | default:'' }}"
                         pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-                        oninvalid="setCustomValidity('{% trans "Por favor introduzca una dirección de correo que sea válida" %}')"
-                        oninput="setCustomValidity('')" 
                         required
                     />
             </section>

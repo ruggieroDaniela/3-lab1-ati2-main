@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 23:03+0000\n"
+"POT-Creation-Date: 2023-04-05 19:38+0000\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -567,7 +567,7 @@ msgid "Cancelar"
 msgstr "Stornieren"
 
 #: lab_ati/templates/common/header.html:84
-#: lab_ati/templates/pages/proveedor/formAuto.html:157
+#: lab_ati/templates/pages/proveedor/formAuto.html:161
 msgid "Guardar"
 msgstr "Halten"
 
@@ -595,12 +595,8 @@ msgstr "Erstellen Sie ein Unternehmen"
 msgid "Edita la información de una empresa"
 msgstr "Firmeninformationen bearbeiten"
 
-#: lab_ati/templates/pages/business/create.html:74
-msgid "Por favor introduzca una dirección de correo que sea válida"
-msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein"
-
-#: lab_ati/templates/pages/business/create.html:97
-#: lab_ati/templates/pages/business/create.html:115
+#: lab_ati/templates/pages/business/create.html:95
+#: lab_ati/templates/pages/business/create.html:113
 #: lab_ati/templates/pages/employees/create.html:124
 #: lab_ati/templates/pages/employees/create.html:145
 msgid ""
@@ -610,19 +606,19 @@ msgstr ""
 "Gültige Telefonnummernformate: +58-0212-123-1234, +58-0212-123-12-34, "
 "+5802121231234"
 
-#: lab_ati/templates/pages/business/create.html:173
-#: lab_ati/templates/pages/proveedor/formAuto.html:73
-#: lab_ati/templates/pages/proveedor/formAuto.html:137
+#: lab_ati/templates/pages/business/create.html:171
+#: lab_ati/templates/pages/proveedor/formAuto.html:79
+#: lab_ati/templates/pages/proveedor/formAuto.html:141
 #: lab_ati/templates/pages/proveedor/read.html:49
 #: lab_ati/templates/pages/proveedor/read.html:109
 msgid "Redes sociales"
 msgstr "Soziale Netzwerke"
 
-#: lab_ati/templates/pages/business/create.html:188
+#: lab_ati/templates/pages/business/create.html:186
 msgid "Crear empresa"
 msgstr "Unternehmen erstellen"
 
-#: lab_ati/templates/pages/business/create.html:190
+#: lab_ati/templates/pages/business/create.html:188
 msgid "Editar empresa"
 msgstr "Unternehmen bearbeiten"
 
@@ -812,7 +808,7 @@ msgstr "Lieferantenregistrierung für Unternehmen"
 msgid "Información del proveedor"
 msgstr "Anbieterinformationen"
 
-#: lab_ati/templates/pages/proveedor/formAuto.html:76
+#: lab_ati/templates/pages/proveedor/formAuto.html:82
 msgid "Información del representante"
 msgstr "Repräsentative Informationen"
 
@@ -888,3 +884,6 @@ msgstr "Name des Benutzers"
 #: lab_ati/users/views.py:25
 msgid "Information successfully updated"
 msgstr "Informationen erfolgreich aktualisiert"
+
+#~ msgid "Por favor introduzca una dirección de correo que sea válida"
+#~ msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein"
