@@ -784,7 +784,7 @@ msgstr "List of employees"
 
 #: lab_ati/templates/pages/employees/list.html:12
 msgid "Gestiona empleados"
-msgstr "manage employees"
+msgstr "Manage employees"
 
 #: lab_ati/templates/pages/employees/list.html:24
 msgid "ID"

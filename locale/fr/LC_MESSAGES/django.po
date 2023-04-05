@@ -796,7 +796,7 @@ msgstr "Gérer les employés"
 
 #: lab_ati/templates/pages/employees/list.html:24
 msgid "ID"
-msgstr "IDENTIFIANT"
+msgstr "Identifiant"
 
 #: lab_ati/templates/pages/employees/list.html:30
 msgid "Cedula de identidad o pasaporte"

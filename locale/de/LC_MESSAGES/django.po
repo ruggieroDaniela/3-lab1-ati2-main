@@ -793,7 +793,7 @@ msgstr "Mitarbeiter verwalten"
 
 #: lab_ati/templates/pages/employees/list.html:24
 msgid "ID"
-msgstr "AUSWEIS"
+msgstr "Ausweis"
 
 #: lab_ati/templates/pages/employees/list.html:30
 msgid "Cedula de identidad o pasaporte"
