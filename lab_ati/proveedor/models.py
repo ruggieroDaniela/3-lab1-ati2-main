@@ -12,7 +12,7 @@ class Proveedor(EmpresaABC):
     email_representante=models.EmailField(_("Correo del representante"))
     email_personal_representante=models.EmailField(_("Correo personal del representante"))
     tlf_representate=models.TextField(_("Teléfono celular del representante"))
-    tlf_local=models.TextField(_("Teléfono local del representante"))
+    tlf_local=models.TextField(_("Teléfono local del representante"), blank=True)
     pais_representante=models.TextField(_("Pais de residencia de representante"))
     empresa=models.ForeignKey(
         to="empresa.Empresa",
