@@ -27,14 +27,15 @@ class Cliente(DirABC):
         blank=True,
     )
     personal_email=models.TextField(_("Email personal"))
-    tlf_celular=models.TextField(_("Teléfono celular"))
-    whatsapp=models.TextField(_("Whatsapp"))
+    tlf_celular=models.TextField(_("Teléfono celular"),null=True,blank=True)
+    whatsapp=models.TextField(_("Whatsapp"),null=True,blank=True)
     servicio_ofrecido = models.TextField(_("Servicio ofrecido"))
     curso_interes=models.TextField(_("Curso de interés"))
     frecuencia=models.TextField(_("Frecuencia con la que desea mantenerse informado"))
 
     def clean(self):
-        if self.tlf_celular is None and self.whatsapp is None:
+        print("."+self.tlf_celular+".")
+        if (self.tlf_celular is None and self.whatsapp is None) or (self.tlf_celular == "" and self.whatsapp == "") :
             raise ValidationError('Debe proporcionar al menos un número de teléfono', code='tlf_missing')
     
     def __str__(self):
