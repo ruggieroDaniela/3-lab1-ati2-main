@@ -13,7 +13,9 @@
                 {% else %}
                 <div class="col-6">
                 {% endif %}
-                    <label class="form-label">{{ field.label }}:</label>
+                
+                <label class="form-label">{{ field.label }}:</label>
+                {% if field.value != "" %}
                     <input 
                         type="{{ field.field.widget.input_type }}"
                         class="form-control" 
@@ -23,6 +25,18 @@
                         value="{{ field.value | default:'' }}"
                         disabled
                     > 
+                {% else %}
+                    <input 
+                        style="color: red; text-decoration: underline;"
+                        type="{{ field.field.widget.input_type }}"
+                        class="form-control" 
+                        name="{{ field.name }}"
+                        aria-describedby="helpId" 
+                        placeholder="{{ field.label }}"
+                        value="No tiene"
+                        disabled
+                    >                 
+                {% endif %}
                 </div>
             {% endfor %}
             <div class="row">
