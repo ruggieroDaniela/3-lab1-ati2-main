@@ -37,7 +37,16 @@ class CreateBusinessForm(forms.ModelForm):
                 field.widget.attrs.update({
                     "class": "form-select",
                 })   
+        
+        self.fields['telefono'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+        }) 
+        
+        self.fields['whatsapp'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+        }) 
 
+    
     class Meta:
         model = Empresa
         fields = "__all__"
