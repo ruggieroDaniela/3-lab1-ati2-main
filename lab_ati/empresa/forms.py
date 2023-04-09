@@ -39,11 +39,11 @@ class CreateBusinessForm(forms.ModelForm):
                 })   
         
         self.fields['telefono'].widget.attrs.update({
-            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}",
         }) 
         
         self.fields['whatsapp'].widget.attrs.update({
-            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}",
         }) 
 
     
@@ -82,11 +82,11 @@ class CreateEmployeeForm(forms.ModelForm):
                 })   
 
         self.fields['tlf_celular'].widget.attrs.update({
-                "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
-            }) 
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){3,4}|\+?\d{7,15}",
+        }) 
             
         self.fields['tlf_local'].widget.attrs.update({
-            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){3,4}|\+?\d{7,15}",
         }) 
 
 

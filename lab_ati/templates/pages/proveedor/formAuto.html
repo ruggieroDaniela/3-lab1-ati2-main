@@ -62,7 +62,7 @@
               name="{{campo.name}}"
               placeholder="{{campo.label}}"
               value="{{data.proveedor|get_item:campo.name}}"
-              pattern = "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?"
+              pattern = "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}"
               Required
             />
             </section>
@@ -141,7 +141,7 @@
               name="{{campo.name}}"
               placeholder="{{campo.label}}"
               value="{{data.proveedor|get_item:campo.name}}"
-              pattern = "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?"
+              pattern = "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}"
               Required
             />
             </section>
