@@ -45,6 +45,10 @@ class CreateBusinessForm(forms.ModelForm):
         self.fields['whatsapp'].widget.attrs.update({
             "pattern" : "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}",
         }) 
+        
+        self.fields['email'].widget.attrs.update({
+            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
+        })  
 
     
     class Meta:
@@ -89,7 +93,14 @@ class CreateEmployeeForm(forms.ModelForm):
             "pattern" : "\+?\d{1,3}(-\d{2,4}){3,4}|\+?\d{7,15}",
         }) 
 
-
+        self.fields['email_emp'].widget.attrs.update({
+            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
+        })  
+        
+        self.fields['email_p'].widget.attrs.update({
+            "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
+        })  
+        
     class Meta:
         model = Empleado
         fields = "__all__"

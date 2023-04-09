@@ -207,7 +207,7 @@ class DetailEmployeeView(DetailView):
         context = super().get_context_data(**kwargs)
         context['business_id'] = self.kwargs['business_id']
 
-        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
+        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context['business_id']} )
         return context
     
 class CreateEmployeeView(CreateView):
@@ -216,13 +216,7 @@ class CreateEmployeeView(CreateView):
     form_class = CreateEmployeeForm
 
     def get_success_url(self):
-        return reverse(
-            "empresa:edit-employee",
-            kwargs={
-                "business_id": self.empresa.id,
-                "pk": self.object.pk,
-            },
-        )
+        return reverse("empresa:list-employee", kwargs={"business_id": self.empresa.id })
     
     def get_empresa(self):
         # Validate that Empresa exists
@@ -273,7 +267,7 @@ class CreateEmployeeView(CreateView):
         context["paises"] = getCountries()
 
         # Header
-        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
+        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
 
         # Queryset vacio porque vamos a crear un empleado nuevo
         context["socialm_formset"] = SocialMediaFormset(queryset=SocialMedia.objects.none())
@@ -286,13 +280,7 @@ class EditEmployeeView(UpdateView):
     pk_url_kwarg = 'pk'
 
     def get_success_url(self):
-        return reverse(
-            "empresa:edit-employee",
-            kwargs={
-                "business_id": self.empresa.id,
-                "pk": self.object.pk,
-            },
-        )
+       return reverse("empresa:list-employee", kwargs={"business_id": self.empresa.id })
 
     def get_empresa(self):
         # Validate that Empresa exists
@@ -343,7 +331,7 @@ class EditEmployeeView(UpdateView):
         # Get countries         
         context["paises"] = getCountries()
         
-        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["empresa"].id} )
+        context["list_link"] = reverse("empresa:list-employee", kwargs={"business_id": context["business_id"]} )
         return context
 
 class DeleteEmployeeView(DeleteView):

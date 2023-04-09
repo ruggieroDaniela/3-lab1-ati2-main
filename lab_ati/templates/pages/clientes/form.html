@@ -11,22 +11,55 @@
         {% endif %}
             <div class="col input-group">
 
-                {% if field.name == 'personal_email' %}
+            {% if field.name == 'personal_email' %}
+                <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ field.label }}</label>
+                <input 
+                    type="{{ field.widget.input_type }}"
+                    class="form-control" 
+                    name="{{ field.name }}"
+                    aria-describedby="helpId" 
+                    placeholder="{{ field.label }}"
+                    value="{{ field.value | default:'' }}"
+                    pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
+                    Required
+                >
+                {% for error in form.email.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+                
+            {% elif field.name == 'tipo' %}
+                <label class="input-group-text">{% trans "Tipo" %}</label>
+                <select 
+                    class="form-select" 
+                    aria-label="Default select example"
+                    name="{{ field.name }}"
+                    placeholder="{{ field.label }}" 
+                    value="{{ field.value | default:'' }}"
+                >
+                    <option value="LE" {% if field.value == 'LE' %} selected {% endif %}>
+                        <h5>{% trans "Labora empresa" %}</h5>
+                    </option>
+                    <option value="SO" {% if field.value == 'SO' %} selected {% endif %}>
+                        <h5>{% trans "Estudiante" %}</h5>
+                    </option>
+                    <option value="JR" {% if field.value == 'JR' %} selected {% endif %}>
+                        <h5>{% trans "Otro" %}</h5>
+                    </option>
+                </select>
+            {% elif field.name == 'pais' %}                        
+                <!--Pais-->
+                <label class="input-group-text">{% trans "Pais" %}</label>
+                <select 
+                    class="form-select" 
+                    aria-label="Default select example"
+                    name="{{ field.name }}"
+                    placeholder="{{ field.label }}" 
+                    value="{{ field.value | default:'' }}">
                     
-                    <label for="{{ form.email.id_for_label }}" class="input-group-text">{{ field.label }}</label>
-                    <input 
-                        type="{{ field.widget.input_type }}"
-                        class="form-control" 
-                        name="{{ field.name }}"
-                        aria-describedby="helpId" 
-                        placeholder="{{ field.label }}"
-                        value="{{ field.value | default:'' }}"
-                        pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-                        Required
-                    >
-                    {% for error in form.email.errors %}
-                        <span class="invalid-feedback">{{ error }}</span>
+                    {% for i in paises %}
+                        <option value='{{i}}' {% if field.value ==  i  %} selected {% endif %}>{{i}} </option>
                     {% endfor %}
+                    
                 {% elif field.name == 'tlf_celular' or field.name == 'whatsapp'  %}
                     <label for="{{ field.id_for_label }}" class="input-group-text">{{ field.label }}</label>
                     <input 
@@ -37,7 +70,6 @@
                         placeholder="{{ field.label }}"
                         value="{{ field.value | default:'' }}"
                         pattern="\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}"
-                        Required
                     >
                 {% else %}
                     {% if field.name == 'tipo' %}
@@ -116,6 +148,11 @@
             </div>
         {% endfor %}
     </div>
+    {% if form.non_field_errors %}
+    <span class="text-danger text-xs mx-2">
+        {{form.non_field_errors}}
+    </span>
+    {% endif %}
     <div class="row">
         <div class="col input-group">
             <h5>{% trans "Redes Sociales" %}</h5>

@@ -43,7 +43,7 @@
           </section>
         {% else %}
           <!--Correo electronico-->
-          {% if campo.name == 'email' %}
+          {% if campo.name == 'email' or campo.name == 'email_representante' or campo.name == 'email_personal_representante' %}
             <input id="email_proveedor"
             type="{{campo.field.widget.input_type}}"
             class="form-control"
@@ -128,8 +128,6 @@
             placeholder="{{campo.label}}"
             value="{{data.proveedor|get_item:campo.name}}"
             pattern="[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+"
-            oninvalid="setCustomValidity('Por favor, introduzca una dirección de correo que sea válida')"
-            oninput="setCustomValidity('')"
             Required
             />      
             </section>      
@@ -151,7 +149,7 @@
                   <i class="bi bi-info-circle"></i>
                   {% trans 'Formatos válidos: +58-0212-123-1234, +58-0212-123-12-34, +5802121231234, 58-0212-123-1234' %}
               </span>            
-            </section>
+            </section>       
           {% else %}
             <!--Otro-->
             <input id="representante"
