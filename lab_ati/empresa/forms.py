@@ -81,6 +81,15 @@ class CreateEmployeeForm(forms.ModelForm):
                     "id":"modalidad",
                 })   
 
+        self.fields['tlf_celular'].widget.attrs.update({
+                "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+            }) 
+            
+        self.fields['tlf_local'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?",
+        }) 
+
+
     class Meta:
         model = Empleado
         fields = "__all__"

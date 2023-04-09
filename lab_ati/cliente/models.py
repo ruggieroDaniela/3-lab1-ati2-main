@@ -12,7 +12,7 @@ class ClientType(models.TextChoices):
 
 class Cliente(DirABC):
     # Validaciones
-    tlf_regex = '^\+?([0-9]{1,3}|[1]\-?[0-9]{3})?\-?([0-9]{1,4})\-?([0-9]{3}\-?[0-9]{2}\-?[0-9]{2})$'
+    tlf_regex = '^\+?\d{1,3}-?\d{3,4}-?\d{2,4}(-?\d{2,4})?(-?\d{2,4})?$'
     
     # Campos
     nombre = models.TextField(_("Nombre y Apellido"))
