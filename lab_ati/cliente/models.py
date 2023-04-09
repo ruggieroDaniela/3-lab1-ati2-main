@@ -1,7 +1,7 @@
 from django.db import models
 from lab_ati.empresa.models import DirABC
 from django.utils.translation import gettext_lazy as _
-from django.core.exceptions import ValidationError
+from django.core import validators
 
 # Create your models here.
 
@@ -30,26 +30,9 @@ class Cliente(DirABC):
         blank=True,
     )
     personal_email=models.TextField(_("Email personal"))
-    tlf_celular=models.TextField(_("Teléfono celular"), 
-       validators=[validators.RegexValidator(
-            regex=tlf_regex,
-            message=_('El campo debe ser un número de teléfono')
-        )]    
-    )
-    whatsapp=models.TextField(_("Whatsapp"), 
-        validators=[validators.RegexValidator(
-            regex=tlf_regex,
-            message=_('El campo debe ser un número de teléfono')
-        )]  
-    )
     servicio_ofrecido = models.TextField(_("Servicio ofrecido"))
     curso_interes=models.TextField(_("Curso de interés"))
     frecuencia=models.TextField(_("Frecuencia con la que desea mantenerse informado"))
 
-    def clean(self):
-        print("."+self.tlf_celular+".")
-        if (self.tlf_celular is None and self.whatsapp is None) or (self.tlf_celular == "" and self.whatsapp == "") :
-            raise ValidationError('Debe proporcionar al menos un número de teléfono', code='tlf_missing')
-    
     def __str__(self):
         return f"{self.nombre} {self.tipo}"
