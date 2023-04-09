@@ -36,12 +36,21 @@ class CreateBusinessForm(forms.ModelForm):
             if isinstance(field.widget, forms.widgets.Select):
                 field.widget.attrs.update({
                     "class": "form-select",
-                }) 
+                })   
+        
+        self.fields['telefono'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}",
+        }) 
+        
+        self.fields['whatsapp'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}",
+        }) 
         
         self.fields['email'].widget.attrs.update({
             "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",
         })  
 
+    
     class Meta:
         model = Empresa
         fields = "__all__"
@@ -75,6 +84,14 @@ class CreateEmployeeForm(forms.ModelForm):
                     "class": "form-select",
                     "id":"modalidad",
                 })   
+
+        self.fields['tlf_celular'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){3,4}|\+?\d{7,15}",
+        }) 
+            
+        self.fields['tlf_local'].widget.attrs.update({
+            "pattern" : "\+?\d{1,3}(-\d{2,4}){3,4}|\+?\d{7,15}",
+        }) 
 
         self.fields['email_emp'].widget.attrs.update({
             "pattern" : "[^\s@]+@[^\s@\.]+\.{1}[^\s@\.]+",

@@ -36,7 +36,7 @@ class EmpresaABC(DirABC):
 
 # Normal Classes
 class Empresa(EmpresaABC):
-    tlf_regex = '^\+?([0-9]{1,3}|[1]\-?[0-9]{3})?\-?([0-9]{1,4})\-?([0-9]{3}\-?[0-9]{2}\-?[0-9]{2})$'
+    tlf_regex = '^\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}$'
 
     servicio_ofrecido = models.TextField(_("Servicio que le ofrecimos"))
     servicio_proporciona = models.TextField(_("Servicio que proporciona"))
@@ -89,7 +89,7 @@ class SocialMedia(models.Model):
         return f"{self.nombre} {self.valor}"
 
 class Empleado(DirABC):
-    tlf_regex = '^\+?([0-9]{1,3}|[1]\-?[0-9]{3})?\-?([0-9]{1,4})\-?([0-9]{3}\-?[0-9]{2}\-?[0-9]{2})$'
+    tlf_regex = '^\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}$'
     ci_regex = '^(([A-Z]-)[0-9]{1,3}\.?[0-9]{1,3}\.?[0-9]{1,3})$|^([A-Z]{1,3}[0-9]{6,7})$'
 
     class Modalidad(models.TextChoices):

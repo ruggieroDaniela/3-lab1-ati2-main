@@ -11,7 +11,10 @@ class ClientType(models.TextChoices):
     OTHER = 'JR', _('Otro')
 
 class Cliente(DirABC):
-
+    # Validaciones
+    tlf_regex = '^\+?\d{1,3}(-\d{2,4}){2,4}|\+?\d{7,15}$'
+    
+    # Campos
     nombre = models.TextField(_("Nombre y Apellido"))
     tipo = models.TextField(
         choices=ClientType.choices,
@@ -27,8 +30,18 @@ class Cliente(DirABC):
         blank=True,
     )
     personal_email=models.TextField(_("Email personal"))
-    tlf_celular=models.TextField(_("Teléfono celular"),null=True,blank=True)
-    whatsapp=models.TextField(_("Whatsapp"),null=True,blank=True)
+    tlf_celular=models.TextField(_("Teléfono celular"), 
+       validators=[validators.RegexValidator(
+            regex=tlf_regex,
+            message=_('El campo debe ser un número de teléfono')
+        )]    
+    )
+    whatsapp=models.TextField(_("Whatsapp"), 
+        validators=[validators.RegexValidator(
+            regex=tlf_regex,
+            message=_('El campo debe ser un número de teléfono')
+        )]  
+    )
     servicio_ofrecido = models.TextField(_("Servicio ofrecido"))
     curso_interes=models.TextField(_("Curso de interés"))
     frecuencia=models.TextField(_("Frecuencia con la que desea mantenerse informado"))
