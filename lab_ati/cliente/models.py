@@ -35,7 +35,7 @@ class Cliente(DirABC):
 
     def clean(self):
         if (self.tlf_celular is None and self.whatsapp is None) or (self.tlf_celular == "" and self.whatsapp == "") :
-            raise ValidationError('Debe proporcionar al menos un número de teléfono', code='tlf_missing')
-        
+            raise ValidationError(_('Debe proporcionar al menos un número de teléfono'), code='tlf_missing')
+    
     def __str__(self):
         return f"{self.nombre} {self.tipo}"
