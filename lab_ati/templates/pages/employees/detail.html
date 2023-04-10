@@ -3,7 +3,7 @@
 
 {% block content %}
 <section class="general-container w-100">
-    {% include "../../common/navigation-bar.html" with back_link=request.META.HTTP_REFERER list_link="" %}
+    {% include "../../common/navigation-bar.html" with back_link=request.META.HTTP_REFERER list_link=list_link %}
     <h2 class="text-center pb-4">{% trans "Información del empleado" %}</h2>
     <section class="card">
         <section class="card-body">
@@ -12,7 +12,7 @@
             <p class="card-text">{% trans 'Empresa a la que pertenece' %}: {{ object.empresa }} </p>
             <p class="card-text">{% trans 'Cargo' %}: {{ object.cargo }} </p>
             <p class="card-text">{% trans 'Teléfono local' %}: {{ object.tlf_local }} </p>
-            <p class="card-text">{% trans 'Empresa a la que pertenece' %}: {{ object.tlf_celular }} </p>
+            <p class="card-text">{% trans 'Teléfono celular' %}: {{ object.tlf_celular }} </p>
             <p class="card-text">{% trans 'País' %}: {{ object.pais }} </p>
             <p class="card-text">{% trans 'Ciudad' %}: {{ object.ciudad }} </p>
             <p class="card-text">{% trans 'Modelo de contratación' %}: {{ object.modalidad_contratacion }} </p>

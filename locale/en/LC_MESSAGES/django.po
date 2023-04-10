@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 13:34+0000\n"
+"POT-Creation-Date: 2023-04-10 14:02+0000\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,6 +61,7 @@ msgid "Email personal"
 msgstr "Personal email"
 
 #: lab_ati/cliente/models.py:30 lab_ati/empresa/models.py:132
+#: lab_ati/templates/pages/employees/detail.html:15
 msgid "Teléfono celular"
 msgstr "Cell phone"
 
@@ -785,7 +786,6 @@ msgid "Cedula de identidad o nro de pasaporte"
 msgstr "Identity card or passport number"
 
 #: lab_ati/templates/pages/employees/detail.html:12
-#: lab_ati/templates/pages/employees/detail.html:15
 msgid "Empresa a la que pertenece"
 msgstr "Company to which it belongs"
 
