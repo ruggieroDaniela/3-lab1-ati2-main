@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PO French\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-10 14:02+0000\n"
+"POT-Creation-Date: 2023-04-10 14:40+0000\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -745,13 +745,9 @@ msgstr "Vollständiger Name"
 msgid "Información del cliente"
 msgstr "Kundeninformation"
 
-#: lab_ati/templates/pages/clientes/verCliente.html:7
-msgid "Volver"
-msgstr "Zurückkehren"
-
-#: lab_ati/templates/pages/clientes/verCliente.html:36
-msgid "'No tiene'"
-msgstr "'Hat nicht'"
+#: lab_ati/templates/pages/clientes/verCliente.html:35
+msgid "\"No tiene\""
+msgstr "\"Hat nicht\""
 
 #: lab_ati/templates/pages/employees/create.html:10
 msgid "Crea a un empleado con información"
