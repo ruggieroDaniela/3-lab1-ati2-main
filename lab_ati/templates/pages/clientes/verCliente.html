@@ -4,7 +4,7 @@
     <div class="container">
         {% include "../../common/navigation-bar.html" %}
         <h2 class="text-center pb-4">{% trans "Información del cliente" %}</h2>
-        <a class="btn btn-primary" href="{% url 'clients' business_id=business_id %}">Volver</a>
+        <a class="btn btn-primary" href="{% url 'clients' business_id=business_id %}"> {% trans "Volver" %}</a>
         {% csrf_token %}
         <div class="row">
             {% for field in form %}
@@ -33,7 +33,7 @@
                         name="{{ field.name }}"
                         aria-describedby="helpId" 
                         placeholder="{{ field.label }}"
-                        value="No tiene"
+                        value={% trans "'No tiene'" %}
                         disabled
                     >                 
                 {% endif %}
