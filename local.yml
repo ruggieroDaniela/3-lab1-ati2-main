@@ -6,10 +6,7 @@ volumes:
 
 services:
   django:
-    build:
-      context: .
-      dockerfile: ./compose/local/django/Dockerfile
-    image: lab_ati_local_django
+    image: 117026670554.dkr.ecr.sa-east-1.amazonaws.com/ati2lab1:latest
     container_name: lab_ati_local_django
     working_dir: /app
     depends_on:
@@ -18,7 +15,6 @@ services:
       - type: bind
         source: .
         target: /app
-    user: "${UID}:${GID}"
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
