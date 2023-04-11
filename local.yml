@@ -27,7 +27,7 @@ services:
       - "8000:8000"
 
   postgres:
-    image: postgres:14.4
+    image: public.ecr.aws/docker/library/postgres:14.4
     container_name: lab_ati_local_postgres
     volumes:
       - lab_ati_local_postgres_data:/var/lib/postgresql/data:Z
