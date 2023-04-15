@@ -1,31 +1,29 @@
-from django.http.response import Http404
-from django.urls.base import reverse_lazy
-
-from django.views.generic import UpdateView, CreateView, ListView, DeleteView, DetailView
-from .forms import CreateBusinessForm, CreateEmployeeForm, SocialMediaFormset
-from lab_ati.empresa.models import Empleado, Empresa, SocialMedia
-from django.urls import reverse
-from django.utils.translation import gettext as _
-from django.core import exceptions
-from django.shortcuts import render
-from lab_ati.utils.social_media import add_social_media
-from django.urls import reverse
-from django.http import HttpResponse
 import os
-from django.core.files.storage import FileSystemStorage
-from django.conf import settings
-import requests
 
-def cambiarNombre(request):
-    if request.method == 'POST':
-        # Obtener el nuevo nombre del POST
-        nuevo_nombre = request.POST.get('nuevo_nombre')
-        
-        # Realizar la lógica para cambiar el nombre
-        # ...
-        
-        # Enviar una respuesta exitosa
-        return HttpResponse('El nombre ha sido cambiado exitosamente')
+import requests
+from django.conf import settings
+from django.core import exceptions
+from django.core.files.storage import FileSystemStorage
+from django.http import FileResponse, HttpResponse
+from django.shortcuts import redirect, render
+from pathlib import Path
+from django.http.response import Http404
+from django.shortcuts import render
+from django.urls import reverse
+from django.urls.base import reverse_lazy
+from django.utils.translation import gettext as _
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
+
+from lab_ati.empresa.models import Empleado, Empresa, SocialMedia
+from lab_ati.utils.social_media import add_social_media
+
+from .forms import CreateBusinessForm, CreateEmployeeForm, SocialMediaFormset
 
 
 def getCountries():
