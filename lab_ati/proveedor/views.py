@@ -10,7 +10,13 @@ from lab_ati.empresa.models import Empresa, SocialMedia
 from lab_ati.empresa.forms import SocialMediaFormset
 from lab_ati.utils.social_media import add_social_media
 from django.utils.translation import gettext_lazy as _
+from django.core.files.storage import FileSystemStorage
+from django.http import FileResponse, HttpResponse
+from django.shortcuts import redirect, render
+from pathlib import Path
 import requests
+
+
 
 @register.filter
 def get_item(objectList, key):

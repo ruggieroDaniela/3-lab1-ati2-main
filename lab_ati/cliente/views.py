@@ -28,7 +28,7 @@ def cambiarNombre(request):
         response = FileResponse(open(file_path, 'rb'))
         response['Content-Disposition'] = 'attachment; filename="nombre.txt"'
     
-    return redirect(request.META['HTTP_REFERER'])
+    return redirect('/')
 
 
 def getCountries():

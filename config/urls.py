@@ -26,8 +26,11 @@ urlpatterns = [
     path("business/", include("lab_ati.empresa.urls", namespace="business")),
     # Employee urls
 
+    #change name of the organization
+     path('change-name/', include('lab_ati.change-name.urls')),
     # upload images to static folder
     path('image_upload/', include('lab_ati.image_upload.urls')),
+   
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:

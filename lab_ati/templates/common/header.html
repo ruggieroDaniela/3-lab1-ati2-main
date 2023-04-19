@@ -70,7 +70,7 @@
           &times;
         </button>
       </div>
-      <form action="cambiar-nombre" method="post">
+      <form action="/change-name/cambiar-nombre/" method="post">
         {% csrf_token %}
         <div class="modal-body">
           <label for="new-value">{% trans "Ingrese el nombre de la corporación:" %}</label>
